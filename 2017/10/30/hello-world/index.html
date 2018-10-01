@@ -436,16 +436,21 @@
 
 
     
-        <section class="changyan" id="comments">
-  <!--<div id="uyan_frame"></div>-->
-  <div id="SOHUCS"></div>
-  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
-  <script type="text/javascript">
-    window.changyan.api.config({
-      appid: 'cytQpj8K5',
-      conf: '01568be8341687fae73af32d96a6a0e2'
-    });
-  </script>
+        <section id="comments">
+<link rel="stylesheet" href="/css/gitment.min.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'HelloWord', // 可选。默认为 location.href
+  owner: 'sdijj',
+  repo: 'sdijj.github.io',
+  oauth: {
+    client_id: '3c216a509081d325436b',
+    client_secret: 'b3c4b8329f0990d08c803ba5b8af0eb3d5a240c2',
+  },
+})
+gitment.render('comments')
+</script>
 </section>
     
 
