@@ -407,16 +407,21 @@
 
 
     
-        <section class="changyan" id="comments">
-  <!--<div id="uyan_frame"></div>-->
-  <div id="SOHUCS"></div>
-  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
-  <script type="text/javascript">
-    window.changyan.api.config({
-      appid: 'cytQpj8K5',
-      conf: '01568be8341687fae73af32d96a6a0e2'
-    });
-  </script>
+        <section id="comments">
+<link rel="stylesheet" href="/css/gitment.min.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'about', // 可选。默认为 location.href
+  owner: 'sdijj',
+  repo: 'sdijj.github.io',
+  oauth: {
+    client_id: '3c216a509081d325436b',
+    client_secret: 'b3c4b8329f0990d08c803ba5b8af0eb3d5a240c2',
+  },
+})
+gitment.render('comments')
+</script>
 </section>
     
 
@@ -433,7 +438,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/01/about/">about</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/30/draftTest/">draftTest</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/hello-world/">HelloWord</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test/">突破算法第11天-红黑树</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/01/about/">about</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/30/draftTest/">draftTest</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/hello-world/">HelloWord</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test/">突破算法第11天-红黑树</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
