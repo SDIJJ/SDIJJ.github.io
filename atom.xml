@@ -3,11 +3,11 @@
   <title>楠の博客</title>
   
   <subtitle>敲敲代码,聊聊人生</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://shltj.gitee.io/"/>
+  <link href="https://gitee.com/shltj/"/>
   <updated>2018-10-01T01:06:58.117Z</updated>
-  <id>https://shltj.gitee.io/</id>
+  <id>https://gitee.com/shltj/</id>
   
   <author>
     <name>Arnold</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>about</title>
-    <link href="https://shltj.gitee.io/2018/10/01/about/"/>
-    <id>https://shltj.gitee.io/2018/10/01/about/</id>
+    <link href="https://gitee.com/shltj/2018/10/01/about/"/>
+    <id>https://gitee.com/shltj/2018/10/01/about/</id>
     <published>2018-10-01T01:06:58.000Z</published>
     <updated>2018-10-01T01:06:58.117Z</updated>
     
@@ -32,8 +32,8 @@
   
   <entry>
     <title>draftTest</title>
-    <link href="https://shltj.gitee.io/2018/09/30/draftTest/"/>
-    <id>https://shltj.gitee.io/2018/09/30/draftTest/</id>
+    <link href="https://gitee.com/shltj/2018/09/30/draftTest/"/>
+    <id>https://gitee.com/shltj/2018/09/30/draftTest/</id>
     <published>2018-09-30T10:47:00.000Z</published>
     <updated>2018-09-30T10:47:00.671Z</updated>
     
@@ -46,8 +46,8 @@
   
   <entry>
     <title>HelloWord</title>
-    <link href="https://shltj.gitee.io/2017/10/30/hello-world/"/>
-    <id>https://shltj.gitee.io/2017/10/30/hello-world/</id>
+    <link href="https://gitee.com/shltj/2017/10/30/hello-world/"/>
+    <id>https://gitee.com/shltj/2017/10/30/hello-world/</id>
     <published>2017-10-30T14:35:37.000Z</published>
     <updated>2018-09-30T10:30:39.944Z</updated>
     
@@ -64,17 +64,17 @@
     
     </summary>
     
-      <category term="algorithm" scheme="https://shltj.gitee.io/categories/algorithm/"/>
+      <category term="algorithm" scheme="https://gitee.com/shltj/categories/algorithm/"/>
     
     
-      <category term="Test" scheme="https://shltj.gitee.io/tags/Test/"/>
+      <category term="Test" scheme="https://gitee.com/shltj/tags/Test/"/>
     
   </entry>
   
   <entry>
     <title>突破算法第11天-红黑树</title>
-    <link href="https://shltj.gitee.io/2017/10/30/test/"/>
-    <id>https://shltj.gitee.io/2017/10/30/test/</id>
+    <link href="https://gitee.com/shltj/2017/10/30/test/"/>
+    <id>https://gitee.com/shltj/2017/10/30/test/</id>
     <published>2017-10-30T14:35:37.000Z</published>
     <updated>2018-09-30T23:46:31.043Z</updated>
     
@@ -86,17 +86,17 @@
     
     </summary>
     
-      <category term="digital" scheme="https://shltj.gitee.io/categories/digital/"/>
+      <category term="digital" scheme="https://gitee.com/shltj/categories/digital/"/>
     
     
-      <category term="关于我" scheme="https://shltj.gitee.io/tags/%E5%85%B3%E4%BA%8E%E6%88%91/"/>
+      <category term="关于我" scheme="https://gitee.com/shltj/tags/%E5%85%B3%E4%BA%8E%E6%88%91/"/>
     
   </entry>
   
   <entry>
     <title>突破算法第11天-红黑树</title>
-    <link href="https://shltj.gitee.io/2017/10/30/test2/"/>
-    <id>https://shltj.gitee.io/2017/10/30/test2/</id>
+    <link href="https://gitee.com/shltj/2017/10/30/test2/"/>
+    <id>https://gitee.com/shltj/2017/10/30/test2/</id>
     <published>2017-10-30T14:35:37.000Z</published>
     <updated>2018-10-01T00:21:45.354Z</updated>
     
@@ -108,10 +108,10 @@
     
     </summary>
     
-      <category term="开发工具" scheme="https://shltj.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://gitee.com/shltj/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="开发工具" scheme="https://shltj.gitee.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://gitee.com/shltj/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
