@@ -9,25 +9,25 @@
   
   <title>初识Docker | 楠の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.什么是docker docker是一个世界领先的容器化平台.网上对他的定义有很多,说法过于复杂化了.我是通过学习springcloud认识的docker的,感觉它就是一个神器.个人理解的docker就是一个背包,你可以把你需要的东西放在这个背包里,然后这个背包你可以分享给任何人.你也可以从免费的商店里获得别人的背包,无论你咋什么样的环境下都可以正常使用这个背包. docker是跨平台的,支持w">
+  <meta name="description" content="初识Docker： docker是一个神器的开发工具">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识Docker">
 <meta property="og:url" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/index.html">
 <meta property="og:site_name" content="楠の博客">
-<meta property="og:description" content="1.什么是docker docker是一个世界领先的容器化平台.网上对他的定义有很多,说法过于复杂化了.我是通过学习springcloud认识的docker的,感觉它就是一个神器.个人理解的docker就是一个背包,你可以把你需要的东西放在这个背包里,然后这个背包你可以分享给任何人.你也可以从免费的商店里获得别人的背包,无论你咋什么样的环境下都可以正常使用这个背包. docker是跨平台的,支持w">
+<meta property="og:description" content="初识Docker： docker是一个神器的开发工具">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/1538544866753.png">
-<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/1538546571188.png">
-<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/1538548365242.png">
-<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/1538548580593.png">
-<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/1538549437822.png">
-<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/1538549459787.png">
-<meta property="og:updated_time" content="2018-10-03T10:37:35.061Z">
+<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/img/1538544866753.png">
+<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/img/1538546571188.png">
+<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/img/1538548365242.png">
+<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/img/1538548580593.png">
+<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/img/1538549437822.png">
+<meta property="og:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/img/1538549459787.png">
+<meta property="og:updated_time" content="2018-10-03T10:43:54.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Docker">
-<meta name="twitter:description" content="1.什么是docker docker是一个世界领先的容器化平台.网上对他的定义有很多,说法过于复杂化了.我是通过学习springcloud认识的docker的,感觉它就是一个神器.个人理解的docker就是一个背包,你可以把你需要的东西放在这个背包里,然后这个背包你可以分享给任何人.你也可以从免费的商店里获得别人的背包,无论你咋什么样的环境下都可以正常使用这个背包. docker是跨平台的,支持w">
-<meta name="twitter:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/1538544866753.png">
+<meta name="twitter:description" content="初识Docker： docker是一个神器的开发工具">
+<meta name="twitter:image" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/img/1538544866753.png">
   
     <link rel="alternative" href="/atom.xml" title="楠の博客" type="application/atom+xml">
   
@@ -182,7 +182,7 @@
                         
                             <li><a  href="/categories/开发工具/">开发工具</a></li>
                         
-                            <li><a  href="/categories/framework">开源框架</a></li>
+                            <li><a  href="/categories/开源框架">开源框架</a></li>
                         
                             <li><a  href="/categories/summary">项目总结</a></li>
                         
@@ -207,7 +207,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+                        <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
                     </div>
                 </section>
                 
@@ -263,7 +263,7 @@
                 
                     <li><a href="/categories/开发工具/">开发工具</a></li>
                 
-                    <li><a href="/categories/framework">开源框架</a></li>
+                    <li><a href="/categories/开源框架">开源框架</a></li>
                 
                     <li><a href="/categories/summary">项目总结</a></li>
                 
@@ -292,7 +292,7 @@
   
     <div class="article-meta">
       <a  href="/2018/10/03/初识Docker/" class="article-date">
-      <time datetime="2018-10-02T16:00:00.000Z" itemprop="datePublished">2018-10-03</time>
+      <time datetime="2018-10-03T14:35:37.000Z" itemprop="datePublished">2018-10-03</time>
 </a>
 
     </div>
@@ -332,11 +332,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="1-什么是docker"><a href="#1-什么是docker" class="headerlink" title="1.什么是docker"></a>1.什么是docker</h2><blockquote>
+        <p><strong> 初识Docker：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>docker是一个神器的开发工具<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h2 id="1-什么是docker"><a href="#1-什么是docker" class="headerlink" title="1.什么是docker"></a>1.什么是docker</h2><blockquote>
 <p>docker是一个世界领先的容器化平台.网上对他的定义有很多,说法过于复杂化了.我是通过学习springcloud认识的docker的,感觉它就是一个神器.个人理解的docker就是一个背包,你可以把你需要的东西放在这个背包里,然后这个背包你可以分享给任何人.你也可以从免费的商店里获得别人的背包,无论你咋什么样的环境下都可以正常使用这个背包.</p>
 <p>docker是跨平台的,支持windows,maxos,linux</p>
 </blockquote>
-<h2 id="2-docker思想"><a href="#2-docker思想" class="headerlink" title="2.docker思想"></a>2.docker思想</h2><p><img src="1538544866753.png" alt="1538544866753"></p>
+<h2 id="2-docker思想"><a href="#2-docker思想" class="headerlink" title="2.docker思想"></a>2.docker思想</h2><p><img src="img/1538544866753.png" alt="1538544866753"></p>
 <h2 id="3-docker解决了哪些问题"><a href="#3-docker解决了哪些问题" class="headerlink" title="3.docker解决了哪些问题"></a>3.docker解决了哪些问题</h2><h3 id="3-1换一个运行环境程序跑不起来"><a href="#3-1换一个运行环境程序跑不起来" class="headerlink" title="3.1换一个运行环境程序跑不起来"></a>3.1换一个运行环境程序跑不起来</h3><blockquote>
 <p>自己本地运行好好的程序放在别人的电脑上就不行了,曾经亲自体会过,非常苦恼.一是苦恼还得在别人的电脑上调bug,更可怕的是时时刻刻担心自己的程序放在第三台电脑上也会down掉了.这种恐惧远胜过修改bug.相信这种问题无论是哪个程序员都或多或少遇到过.docker的出现完美的解决了这个问题,它将你写好的代码,运行环境都放在一个”集装箱”里,给别人的不只是代码,而是一整套的程序所需的运行环境.在你的机器上怎们运行,在别人的电脑或者服务器上就会怎样运行.</p>
 </blockquote>
@@ -350,7 +352,7 @@
 <p>docker的三个关键字:镜像,仓库,容器</p>
 <p>docker的三个关键单词:Build,Ship,Run</p>
 </blockquote>
-<p><img src="1538546571188.png" alt="1538546571188"></p>
+<p><img src="img/1538546571188.png" alt="1538546571188"></p>
 <blockquote>
 <p>-镜像:</p>
 <p>-容器:</p>
@@ -363,7 +365,7 @@
 <h2 id="5-docker的安装"><a href="#5-docker的安装" class="headerlink" title="5.docker的安装"></a>5.docker的安装</h2><blockquote>
 <p>网上教程很多,懒得再详细总结</p>
 </blockquote>
-<h2 id="6-第一个docker镜像"><a href="#6-第一个docker镜像" class="headerlink" title="6.第一个docker镜像"></a>6.第一个docker镜像</h2><h3 id="6-1docker工作流程"><a href="#6-1docker工作流程" class="headerlink" title="6.1docker工作流程"></a>6.1docker工作流程</h3><p><img src="1538548365242.png" alt="1538548365242"></p>
+<h2 id="6-第一个docker镜像"><a href="#6-第一个docker镜像" class="headerlink" title="6.第一个docker镜像"></a>6.第一个docker镜像</h2><h3 id="6-1docker工作流程"><a href="#6-1docker工作流程" class="headerlink" title="6.1docker工作流程"></a>6.1docker工作流程</h3><p><img src="img/1538548365242.png" alt="1538548365242"></p>
 <h3 id="6-2常用的命令"><a href="#6-2常用的命令" class="headerlink" title="6.2常用的命令"></a>6.2常用的命令</h3><blockquote>
 <ul>
 <li>docker pull [OPTIONS] NAME[:TAG]  拉去镜像   举例:docker pull hello-world</li>
@@ -379,8 +381,8 @@
 <li>docker build  -t  Jpress:latest  .   :给镜像起一个名字和版本</li>
 </ul>
 </blockquote>
-<h2 id="7-运行Nginx服务器镜像"><a href="#7-运行Nginx服务器镜像" class="headerlink" title="7.运行Nginx服务器镜像"></a>7.运行Nginx服务器镜像</h2><p><img src="1538548580593.png" alt="1538548580593"></p>
-<h2 id="8-docker的网络"><a href="#8-docker的网络" class="headerlink" title="8.docker的网络"></a>8.docker的网络</h2><p><img src="1538549437822.png" alt="1538549437822"><img src="1538549459787.png" alt="1538549459787"></p>
+<h2 id="7-运行Nginx服务器镜像"><a href="#7-运行Nginx服务器镜像" class="headerlink" title="7.运行Nginx服务器镜像"></a>7.运行Nginx服务器镜像</h2><p><img src="img/1538548580593.png" alt="1538548580593"></p>
+<h2 id="8-docker的网络"><a href="#8-docker的网络" class="headerlink" title="8.docker的网络"></a>8.docker的网络</h2><p><img src="img/1538549437822.png" alt="1538549437822"><img src="img/1538549459787.png" alt="1538549459787"></p>
 <h2 id="9-制作自己的镜像"><a href="#9-制作自己的镜像" class="headerlink" title="9.制作自己的镜像"></a>9.制作自己的镜像</h2><blockquote>
 <ul>
 <li>Dockerfille : 制作镜像</li>
@@ -397,8 +399,8 @@
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/2018/10/03/初识Docker/">初识Docker</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Arnold 的个人博客">Arnold</a></p>
-        <p><span>发布时间:</span>2018年10月03日 - 00时00分</p>
-        <p><span>最后更新:</span>2018年10月03日 - 18时37分</p>
+        <p><span>发布时间:</span>2018年10月03日 - 22时35分</p>
+        <p><span>最后更新:</span>2018年10月03日 - 18时43分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/03/初识Docker/" title="初识Docker">https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/</a>
             <span class="copy-path" data-clipboard-text="原文: https://github.com/SDIJJ/sdijj.github.io/2018/10/03/初识Docker/　　作者: Arnold" title=""></span>
@@ -411,6 +413,15 @@
 
 
 <nav id="article-nav">
+  
+    <a  href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          自定义注解+反射实现orm框架的映射与查询功能
+        
+      </div>
+    </a>
   
   
     <a  href="/2018/10/02/test3/" id="article-nav-older" class="article-nav-link-wrap">
@@ -505,7 +516,9 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a  href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/" title="上一篇: 自定义注解+反射实现orm框架的映射与查询功能">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -514,7 +527,7 @@ gitment.render('comments')
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/初识Docker/">初识Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/02/test3/">初识docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test/">突破算法第11天-红黑树</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/初识Docker/">初识Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/02/test3/">初识docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test/">突破算法第11天-红黑树</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
