@@ -9,18 +9,18 @@
   
   <title>自定义注解+反射实现orm框架的映射与查询功能 | 楠の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自定义注解+反射实现orm框架的映射与查询功能： 对注解和反射的加深学习,对ORM框架的加深理解">
+  <meta name="description" content="积极一点,耐心一点,你想要的,时光都会慢慢带到你面前!对注解和反射的加深学习,对ORM框架的加深理解">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自定义注解+反射实现orm框架的映射与查询功能">
 <meta property="og:url" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/index.html">
 <meta property="og:site_name" content="楠の博客">
-<meta property="og:description" content="自定义注解+反射实现orm框架的映射与查询功能： 对注解和反射的加深学习,对ORM框架的加深理解">
+<meta property="og:description" content="积极一点,耐心一点,你想要的,时光都会慢慢带到你面前!对注解和反射的加深学习,对ORM框架的加深理解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-04T02:41:32.541Z">
+<meta property="og:updated_time" content="2018-10-04T03:04:17.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义注解+反射实现orm框架的映射与查询功能">
-<meta name="twitter:description" content="自定义注解+反射实现orm框架的映射与查询功能： 对注解和反射的加深学习,对ORM框架的加深理解">
+<meta name="twitter:description" content="积极一点,耐心一点,你想要的,时光都会慢慢带到你面前!对注解和反射的加深学习,对ORM框架的加深理解">
   
     <link rel="alternative" href="/atom.xml" title="楠の博客" type="application/atom+xml">
   
@@ -175,11 +175,11 @@
                         
                             <li><a  href="/categories/开发工具/">开发工具</a></li>
                         
-                            <li><a  href="/categories/开源框架">开源框架</a></li>
+                            <li><a  href="/categories/开源框架/">开源框架</a></li>
                         
-                            <li><a  href="/categories/summary">项目总结</a></li>
+                            <li><a  href="/categories/项目总结/">项目总结</a></li>
                         
-                            <li><a  href="/categories/algorithm">算法学习</a></li>
+                            <li><a  href="/categories/算法学习/">算法学习</a></li>
                         
                             <li><a  href="/about/">关于我</a></li>
                         
@@ -200,7 +200,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+                        <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a>
                     </div>
                 </section>
                 
@@ -256,11 +256,11 @@
                 
                     <li><a href="/categories/开发工具/">开发工具</a></li>
                 
-                    <li><a href="/categories/开源框架">开源框架</a></li>
+                    <li><a href="/categories/开源框架/">开源框架</a></li>
                 
-                    <li><a href="/categories/summary">项目总结</a></li>
+                    <li><a href="/categories/项目总结/">项目总结</a></li>
                 
-                    <li><a href="/categories/algorithm">算法学习</a></li>
+                    <li><a href="/categories/算法学习/">算法学习</a></li>
                 
                     <li><a href="/about/">关于我</a></li>
                 
@@ -325,11 +325,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> 自定义注解+反射实现orm框架的映射与查询功能：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>对注解和反射的加深学习,对ORM框架的加深理解<br><a id="more"></a></excerpt></p>
+        <p><strong>积极一点,耐心一点,你想要的,时光都会慢慢带到你面前!</strong><excerpt in="" index="" |="" 首页摘要=""><br>对注解和反射的加深学习,对ORM框架的加深理解<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <blockquote>
-<p>自定义orm框架例如Mybatis,hibernate的@Table,@Column注解,通过反射解析注解实现对应表的查询功能.</p>
+<p><strong>自定义orm框架例如:Mybatis,hibernate的@Table,@Column注解,通过反射解析注解实现对应表的查询功能,对注解加深学习,对orm框架的思想进行理解.</strong><br><em>将定义的注解进行解析取出数据库表的名字,表对应字段的名字,以及字段对应的value进行sql的拼装,最后通过jdbc进行查询.</em><br>具体代码如下:</p>
 </blockquote>
 <h2 id="数据表"><a href="#数据表" class="headerlink" title="数据表"></a>数据表</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Table</span>(<span class="string">"user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Column</span>(<span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="meta">@Column</span>(<span class="string">"userName"</span>)</span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="meta">@Column</span>(<span class="string">"nickName"</span>)</span><br><span class="line">    <span class="keyword">private</span>  String nickName;</span><br><span class="line">    <span class="meta">@Column</span>(<span class="string">"age"</span>)</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="meta">@Column</span>(<span class="string">"city"</span>)</span><br><span class="line">    <span class="keyword">private</span> String city;</span><br><span class="line">    <span class="meta">@Column</span>(<span class="string">"email"</span>)</span><br><span class="line">    <span class="keyword">private</span> String email;</span><br><span class="line">    <span class="meta">@Column</span>(<span class="string">"mobile"</span>)</span><br><span class="line">    <span class="keyword">private</span> String mobile;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUserName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> userName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserName</span><span class="params">(String userName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userName = userName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getNickName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> nickName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNickName</span><span class="params">(String nickName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.nickName = nickName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCity</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> city;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCity</span><span class="params">(String city)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.city = city;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span><span class="params">(String email)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.email = email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMobile</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mobile;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMobile</span><span class="params">(String mobile)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mobile = mobile;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Table &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -350,7 +350,7 @@
         <p><span>本文标题:</span><a  href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Arnold 的个人博客">Arnold</a></p>
         <p><span>发布时间:</span>2018年10月04日 - 00时00分</p>
-        <p><span>最后更新:</span>2018年10月04日 - 10时41分</p>
+        <p><span>最后更新:</span>2018年10月04日 - 11时04分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/" title="自定义注解+反射实现orm框架的映射与查询功能">https://github.com/SDIJJ/sdijj.github.io/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/</a>
             <span class="copy-path" data-clipboard-text="原文: https://github.com/SDIJJ/sdijj.github.io/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/　　作者: Arnold" title=""></span>
@@ -363,6 +363,15 @@
 
 
 <nav id="article-nav">
+  
+    <a  href="/2018/10/04/SpringCloud微服务学习总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          SpringCloud微服务学习总结
+        
+      </div>
+    </a>
   
   
     <a  href="/2018/10/03/初识Docker/" id="article-nav-older" class="article-nav-link-wrap">
@@ -457,7 +466,9 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a  href="/2018/10/04/SpringCloud微服务学习总结/" title="上一篇: SpringCloud微服务学习总结">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -466,7 +477,7 @@ gitment.render('comments')
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/初识Docker/">初识Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/02/test3/">初识docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test/">突破算法第11天-红黑树</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/SpringCloud微服务学习总结/">SpringCloud微服务学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/初识Docker/">初识Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
