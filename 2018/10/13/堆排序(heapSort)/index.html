@@ -7,18 +7,23 @@
   
   
   
-  <title>楠の博客</title>
+  <title>堆排序(heapSort) | 楠の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录学习的技能和遇到的问题(PS:记录的晚了点!)">
-<meta property="og:type" content="website">
-<meta property="og:title" content="楠の博客">
-<meta property="og:url" content="https://github.com/SDIJJ/sdijj.github.io/index.html">
+  <meta name="description" content="仰望星空,脚踏实地,暗无天日,登峰造极学习算法思想,修炼编程内功!">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="堆排序(heapSort)">
+<meta property="og:url" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/13/堆排序(heapSort)/index.html">
 <meta property="og:site_name" content="楠の博客">
-<meta property="og:description" content="记录学习的技能和遇到的问题(PS:记录的晚了点!)">
+<meta property="og:description" content="仰望星空,脚踏实地,暗无天日,登峰造极学习算法思想,修炼编程内功!">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/img/1539159816193.png">
+<meta property="og:image" content="https://github.com/img/1539159633630.png">
+<meta property="og:updated_time" content="2018-10-15T05:29:02.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="楠の博客">
-<meta name="twitter:description" content="记录学习的技能和遇到的问题(PS:记录的晚了点!)">
+<meta name="twitter:title" content="堆排序(heapSort)">
+<meta name="twitter:description" content="仰望星空,脚踏实地,暗无天日,登峰造极学习算法思想,修炼编程内功!">
+<meta name="twitter:image" content="https://github.com/img/1539159816193.png">
   
     <link rel="alternative" href="/atom.xml" title="楠の博客" type="application/atom+xml">
   
@@ -32,9 +37,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -45,8 +47,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -282,79 +284,7 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-二叉搜索树(Binary Seacher  Tree)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/14/二叉搜索树(Binary Seacher  Tree)/" class="article-date">
-      <time datetime="2018-10-14T14:35:37.000Z" itemprop="datePublished">2018-10-14</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/14/二叉搜索树(Binary Seacher  Tree)/">二叉搜索树(Binary Seacher  Tree)</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p> <strong>仰望星空,脚踏实地,暗无天日,登峰造极</strong><excerpt in="" index="" |="" 首页摘要=""><br>学习算法思想,修炼编程内功!</excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法学习/">算法学习</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/10/14/二叉搜索树(Binary Seacher  Tree)/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-堆排序(heapSort)" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-堆排序(heapSort)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  href="/2018/10/13/堆排序(heapSort)/" class="article-date">
@@ -371,550 +301,213 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/13/堆排序(heapSort)/">堆排序(heapSort)</a>
+    <h1 class="article-title" itemprop="name">
+      堆排序(heapSort)
     </h1>
   
 
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p> <strong>仰望星空,脚踏实地,暗无天日,登峰造极</strong><excerpt in="" index="" |="" 首页摘要=""><br>学习算法思想,修炼编程内功!</excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/算法学习/">算法学习</a>
     </div>
 
 
-      
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a   href="/2018/10/13/堆排序(heapSort)/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-堆的学习(Heap)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/13/堆的学习(Heap)/" class="article-date">
-      <time datetime="2018-10-13T14:35:37.000Z" itemprop="datePublished">2018-10-13</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/13/堆的学习(Heap)/">堆(Heap)</a>
-    </h1>
-  
-
-
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p> <strong>仰望星空,脚踏实地,暗无天日,登峰造极</strong><excerpt in="" index="" |="" 首页摘要=""><br>学习算法思想,修炼编程内功!</excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法学习/">算法学习</a>
-    </div>
+        <p> <strong>仰望星空,脚踏实地,暗无天日,登峰造极</strong><excerpt in="" index="" |="" 首页摘要=""><br>学习算法思想,修炼编程内功!</excerpt></p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
 
 
+<h2 id="堆排序-heapSort"><a href="#堆排序-heapSort" class="headerlink" title="堆排序(heapSort)"></a>堆排序(heapSort)</h2><h3 id="1-堆排序的实现"><a href="#1-堆排序的实现" class="headerlink" title="1.堆排序的实现:"></a>1.堆排序的实现:</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> __shiftDown(T arr[],<span class="keyword">int</span> n,<span class="keyword">int</span> k)&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">2</span>*k+<span class="number">1</span>&lt;n)&#123;</span><br><span class="line">        <span class="keyword">int</span> j=<span class="number">2</span>*k+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(j+<span class="number">1</span>&lt;n&amp;&amp;arr[j+<span class="number">1</span>]&gt;arr[j])</span><br><span class="line">            j+=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(arr[k]&gt;arr[j])</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">            swap(arr[j],arr[k]);</span><br><span class="line">            k=j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(T arr[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=(n<span class="number">-1</span>)/<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">    __shiftDown(arr,n,i);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">        swap(arr[<span class="number">0</span>],arr[i]);</span><br><span class="line">        __shiftDown(arr,i,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-排序算法总结"><a href="#2-排序算法总结" class="headerlink" title="2.排序算法总结:"></a>2.排序算法总结:</h3><blockquote>
+<p>排序苏算法的稳定性:对于相等的元素,在排序后,原来靠前的元素依然靠前.相等元素的相对位置没有发生改变.</p>
+<p>在某次场景会考虑到排序算法的稳定性.比如:学生的姓名是按字典序排列的,根据分数排序后,相同分数的学生还应该按照字典序排列.(插入排序和归并排序是稳定的排序算法)</p>
+<p><img src="/img/1539159816193.png" alt="1539159816193"></p>
+</blockquote>
+<p><img src="/img/1539159633630.png" alt="1539159633630"></p>
+</the>
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/10/13/堆的学习(Heap)/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-高级排序算法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/11/高级排序算法/" class="article-date">
-      <time datetime="2018-10-11T14:35:37.000Z" itemprop="datePublished">2018-10-11</time>
-</a>
-
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2018/10/13/堆排序(heapSort)/">堆排序(heapSort)</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Arnold 的个人博客">Arnold</a></p>
+        <p><span>发布时间:</span>2018年10月13日 - 23时35分</p>
+        <p><span>最后更新:</span>2018年10月15日 - 13时29分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/10/13/堆排序(heapSort)/" title="堆排序(heapSort)">https://github.com/SDIJJ/sdijj.github.io/2018/10/13/堆排序(heapSort)/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://github.com/SDIJJ/sdijj.github.io/2018/10/13/堆排序(heapSort)/　　作者: Arnold" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
+
+
+
+<nav id="article-nav">
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <a  href="/2018/10/14/二叉搜索树(Binary Seacher  Tree)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/11/高级排序算法/">高级排序算法(n*logN)</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p> <strong>仰望星空,脚踏实地,暗无天日,登峰造极</strong><excerpt in="" index="" |="" 首页摘要=""><br>学习算法思想,修炼编程内功!</excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法学习/">算法学习</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/10/11/高级排序算法/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-基础的排序算法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/10/基础的排序算法/" class="article-date">
-      <time datetime="2018-10-10T14:35:37.000Z" itemprop="datePublished">2018-10-10</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+          二叉搜索树(Binary Seacher  Tree)
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/10/基础的排序算法/">基础排序算法</a>
-    </h1>
   
+    <a  href="/2018/10/13/堆的学习(Heap)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">堆(Heap)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p> <strong>仰望星空,脚踏实地,暗无天日,登峰造极</strong><excerpt in="" index="" |="" 首页摘要=""><br>学习算法思想,修炼编程内功!</excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法学习/">算法学习</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/10/10/基础的排序算法/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#堆排序-heapSort"><span class="toc-number">1.</span> <span class="toc-text">堆排序(heapSort)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-堆排序的实现"><span class="toc-number">1.1.</span> <span class="toc-text">1.堆排序的实现:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-排序算法总结"><span class="toc-number">1.2.</span> <span class="toc-text">2.排序算法总结:</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/baidu.js?v=89860593.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 
 
 
 
-
-
-  
-    <article id="post-SpringCloud微服务学习总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/04/SpringCloud微服务学习总结/" class="article-date">
-      <time datetime="2018-10-03T16:00:00.000Z" itemprop="datePublished">2018-10-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+        <section id="comments">
+<link rel="stylesheet" href="/css/gitment.min.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '堆排序(heapSort)', // 可选。默认为 location.href
+  owner: 'sdijj',
+  repo: 'sdijj.github.io',
+  oauth: {
+    client_id: '3c216a509081d325436b',
+    client_secret: 'b3c4b8329f0990d08c803ba5b8af0eb3d5a240c2',
+  },
+})
+gitment.render('comments')
+</script>
+</section>
     
-    
-      <header class="article-header">
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/04/SpringCloud微服务学习总结/">SpringCloud微服务学习总结</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> 骗的了别人骗不了自己,做什么都要用心!</strong> <excerpt in="" index="" |="" 首页摘要=""><br>对SpringCloud学习做一个总结,供以后应用查看<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/开源框架/">开源框架</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/10/04/SpringCloud微服务学习总结/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-自定义注解+反射实现orm框架的映射与查询功能" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/" class="article-date">
-      <time datetime="2018-10-03T16:00:00.000Z" itemprop="datePublished">2018-10-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a  href="/2018/10/14/二叉搜索树(Binary Seacher  Tree)/" title="上一篇: 二叉搜索树(Binary Seacher  Tree)">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong>积极一点,耐心一点,你想要的,时光都会慢慢带到你面前!</strong><excerpt in="" index="" |="" 首页摘要=""><br>对注解和反射的加深学习,对ORM框架的加深理解<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/开源框架/">开源框架</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-初识Docker" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/03/初识Docker/" class="article-date">
-      <time datetime="2018-10-03T14:35:37.000Z" itemprop="datePublished">2018-10-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/03/初识Docker/">初识Docker</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p> <strong>读书,健身,努力工作,关心身体,保持好心情,成为最棒的自己!</strong><excerpt in="" index="" |="" 首页摘要=""><br> docker是一个神奇的开发工具!</excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2018/10/03/初识Docker/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-test2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2017/10/30/test2/" class="article-date">
-      <time datetime="2017-10-30T14:35:37.000Z" itemprop="datePublished">2017-10-30</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a  href="/2018/10/13/堆的学习(Heap)/" title="下一篇: 堆(Heap)">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2017/10/30/test2/">突破算法第11天-红黑树</a>
-    </h1>
-  
-
-
-      </header>
-      
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/二叉搜索树(Binary Seacher  Tree)/">二叉搜索树(Binary Seacher  Tree)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/堆排序(heapSort)/">堆排序(heapSort)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/堆的学习(Heap)/">堆(Heap)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/11/高级排序算法/">高级排序算法(n*logN)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/10/基础的排序算法/">基础排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/SpringCloud微服务学习总结/">SpringCloud微服务学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/初识Docker/">初识Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> 累了选择休息而不是选择放弃!</strong> <excerpt in="" index="" |="" 首页摘要=""><br>红黑树<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
-    </div>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a   href="/2017/10/30/test2/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
 
 
-
-
-
-
-
-
-
-  
-  
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">
