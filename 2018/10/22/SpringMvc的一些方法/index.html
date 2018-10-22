@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/img/1534579880860.png">
 <meta property="og:image" content="https://github.com/img/1534579925554.png">
-<meta property="og:updated_time" content="2018-10-22T06:43:48.608Z">
+<meta property="og:updated_time" content="2018-10-22T06:49:13.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMvc的一些方法">
 <meta name="twitter:description" content="失败者找理由,成功者找方法! 对SpringMvc的一些常用方法">
@@ -331,8 +331,7 @@
         <p><strong> 失败者找理由,成功者找方法!</strong> <excerpt in="" index="" |="" 首页摘要=""><br>对SpringMvc的一些常用方法<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<p>##1.Spring-mvc中关于表单中String日期转换为Date的工具类(实现<em>Converter</em>接口)</p>
-<blockquote>
+<h2 id="1-Spring-mvc中关于表单中String日期转换为Date的工具类-实现Converter接口"><a href="#1-Spring-mvc中关于表单中String日期转换为Date的工具类-实现Converter接口" class="headerlink" title="1.Spring-mvc中关于表单中String日期转换为Date的工具类(实现Converter接口)"></a>1.Spring-mvc中关于表单中String日期转换为Date的工具类(实现<em>Converter</em>接口)</h2><blockquote>
 <p>需要实现一个接口,并重写一个方法,如下:</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima.springmvc.utils;</span><br><span class="line"></span><br><span class="line">import java.text.ParseException;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">import org.springframework.core.convert.converter.Converter;</span><br><span class="line"></span><br><span class="line">public class DateConvert2 implements Converter&lt;String, Date&gt;&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Date convert(String arg0) &#123;</span><br><span class="line">		Date date=null;</span><br><span class="line">		try &#123;</span><br><span class="line">			SimpleDateFormat df=new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">			date=df.parse(arg0);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;		</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -351,8 +350,21 @@
         &lt;/set&gt;
     &lt;/property&gt;
 &lt;/bean&gt;
-</code></pre><p>##2.web端关于get和post请求乱码的解决方案(web.xml中添加过滤器)<br>        <!-- 解决post乱码问题 --><br>    <filter><br>        <filter-name>encoding</filter-name><br>        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class><br>        <!-- 设置编码参是UTF8 --><br>        <init-param><br>            <param-name>encoding</param-name><br>            <param-value>UTF-8</param-value><br>        </init-param><br>    </filter><br>    <filter-mapping><br>        <filter-name>encoding</filter-name><br>        <url-pattern>/*</url-pattern><br>    </filter-mapping></p>
-<hr>
+</code></pre><h2 id="2-web端关于get和post请求乱码的解决方案-web-xml中添加过滤器"><a href="#2-web端关于get和post请求乱码的解决方案-web-xml中添加过滤器" class="headerlink" title="2.web端关于get和post请求乱码的解决方案(web.xml中添加过滤器)"></a>2.web端关于get和post请求乱码的解决方案(web.xml中添加过滤器)</h2><pre><code>    &lt;!-- 解决post乱码问题 --&gt;
+&lt;filter&gt;
+    &lt;filter-name&gt;encoding&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+    &lt;!-- 设置编码参是UTF8 --&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;encoding&lt;/param-name&gt;
+        &lt;param-value&gt;UTF-8&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;encoding&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+</code></pre><hr>
 <blockquote>
 <p>修改tomcat中server.xml 文件解决get请求乱码(最方便的方法)</p>
 <ul>
@@ -384,9 +396,8 @@
 </ul>
 </blockquote>
 <hr>
-<p>##4.HandlerExceptionResolver 接口处理全局异常</p>
-<hr>
-<p>##5.springmvc上传文件写法(图片)<br><img src="/img/1534579880860.png" alt="Alt text"></p>
+<h2 id="4-HandlerExceptionResolver-接口处理全局异常"><a href="#4-HandlerExceptionResolver-接口处理全局异常" class="headerlink" title="4.HandlerExceptionResolver 接口处理全局异常"></a>4.HandlerExceptionResolver 接口处理全局异常</h2><hr>
+<h2 id="5-springmvc上传文件写法-图片"><a href="#5-springmvc上传文件写法-图片" class="headerlink" title="5.springmvc上传文件写法(图片)"></a>5.springmvc上传文件写法(图片)</h2><p><img src="/img/1534579880860.png" alt="Alt text"></p>
 <blockquote>
 <p>需要加载的jar包<br><img src="/img/1534579925554.png" alt="Alt text"><br>配置多媒体解析器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置多媒体处理器 --&gt;</span><br><span class="line">	&lt;!-- 注意：这里id必须填写：multipartResolver --&gt;</span><br><span class="line">	&lt;bean id=&quot;multipartResolver&quot; class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;</span><br><span class="line">		&lt;!-- 最大上传文件大小 --&gt;</span><br><span class="line">		&lt;property name=&quot;maxUploadSize&quot; value=&quot;8388608&quot; /&gt;</span><br><span class="line">	&lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
@@ -407,7 +418,7 @@
         <p><span>本文标题:</span><a  href="/2018/10/22/SpringMvc的一些方法/">SpringMvc的一些方法</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Arnold 的个人博客">Arnold</a></p>
         <p><span>发布时间:</span>2018年10月22日 - 00时00分</p>
-        <p><span>最后更新:</span>2018年10月22日 - 14时43分</p>
+        <p><span>最后更新:</span>2018年10月22日 - 14时49分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/10/22/SpringMvc的一些方法/" title="SpringMvc的一些方法">https://github.com/SDIJJ/sdijj.github.io/2018/10/22/SpringMvc的一些方法/</a>
             <span class="copy-path" data-clipboard-text="原文: https://github.com/SDIJJ/sdijj.github.io/2018/10/22/SpringMvc的一些方法/　　作者: Arnold" title=""></span>
@@ -421,11 +432,11 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/10/22/用第三方sdk解决微信授权/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2018/10/22/并查集(Union Find)/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          用第三方sdk解决微信授权
+          并查集(Union Find)
         
       </div>
     </a>
@@ -444,7 +455,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Spring-mvc中关于表单中String日期转换为Date的工具类-实现Converter接口"><span class="toc-number">1.</span> <span class="toc-text">1.Spring-mvc中关于表单中String日期转换为Date的工具类(实现Converter接口)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-web端关于get和post请求乱码的解决方案-web-xml中添加过滤器"><span class="toc-number">2.</span> <span class="toc-text">2.web端关于get和post请求乱码的解决方案(web.xml中添加过滤器)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-HandlerExceptionResolver-接口处理全局异常"><span class="toc-number">3.</span> <span class="toc-text">4.HandlerExceptionResolver 接口处理全局异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-springmvc上传文件写法-图片"><span class="toc-number">4.</span> <span class="toc-text">5.springmvc上传文件写法(图片)</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -523,7 +534,7 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/10/22/用第三方sdk解决微信授权/" title="上一篇: 用第三方sdk解决微信授权">
+            <a  href="/2018/10/22/并查集(Union Find)/" title="上一篇: 并查集(Union Find)">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -534,7 +545,7 @@ gitment.render('comments')
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/并查集(Union Find)/">并查集(Union Find)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/用第三方sdk解决微信授权/">用第三方sdk解决微信授权</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/SpringMvc的一些方法/">SpringMvc的一些方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/二分搜索树(Binary Seacher  Tree)/">二分搜索树(Binary Seacher  Tree)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/堆排序(heapSort)/">堆排序(heapSort)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/堆的学习(Heap)/">堆(Heap)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/11/高级排序算法/">高级排序算法(n*logN)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/10/基础的排序算法/">基础排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/SpringCloud微服务学习总结/">SpringCloud微服务学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/初识Docker/">初识Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/用第三方sdk解决微信授权/">用第三方sdk解决微信授权</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/并查集(Union Find)/">并查集(Union Find)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/SpringMvc的一些方法/">SpringMvc的一些方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/二分搜索树(Binary Seacher  Tree)/">二分搜索树(Binary Seacher  Tree)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/堆排序(heapSort)/">堆排序(heapSort)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/堆的学习(Heap)/">堆(Heap)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/11/高级排序算法/">高级排序算法(n*logN)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/10/基础的排序算法/">基础排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/SpringCloud微服务学习总结/">SpringCloud微服务学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/初识Docker/">初识Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
     
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
