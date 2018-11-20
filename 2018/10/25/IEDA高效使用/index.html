@@ -7,23 +7,20 @@
   
   
   
-  <title>高级排序算法(n*logN) | 楠の博客</title>
+  <title>Java  基础大复习 | 楠の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="仰望星空,脚踏实地,暗无天日,登峰造极学习算法思想,修炼编程内功!">
-<meta name="keywords" content="算法">
+  <meta name="description" content="读书,健身,努力工作,关心身体,保持好心情,成为最棒的自己!">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高级排序算法(n*logN)">
-<meta property="og:url" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/11/高级排序算法/index.html">
+<meta property="og:title" content="Java  基础大复习">
+<meta property="og:url" content="https://github.com/SDIJJ/sdijj.github.io/2018/10/25/IEDA高效使用/index.html">
 <meta property="og:site_name" content="楠の博客">
-<meta property="og:description" content="仰望星空,脚踏实地,暗无天日,登峰造极学习算法思想,修炼编程内功!">
+<meta property="og:description" content="读书,健身,努力工作,关心身体,保持好心情,成为最棒的自己!">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/img/1539061916200.png">
-<meta property="og:image" content="https://github.com/img/1539062061025.png">
-<meta property="og:updated_time" content="2018-10-11T04:34:51.942Z">
+<meta property="og:updated_time" content="2018-11-20T00:43:26.372Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高级排序算法(n*logN)">
-<meta name="twitter:description" content="仰望星空,脚踏实地,暗无天日,登峰造极学习算法思想,修炼编程内功!">
-<meta name="twitter:image" content="https://github.com/img/1539061916200.png">
+<meta name="twitter:title" content="Java  基础大复习">
+<meta name="twitter:description" content="读书,健身,努力工作,关心身体,保持好心情,成为最棒的自己!">
   
     <link rel="alternative" href="/atom.xml" title="楠の博客" type="application/atom+xml">
   
@@ -284,11 +281,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-高级排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-IEDA高效使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/10/11/高级排序算法/" class="article-date">
-      <time datetime="2018-10-11T14:35:37.000Z" itemprop="datePublished">2018-10-11</time>
+      <a  href="/2018/10/25/IEDA高效使用/" class="article-date">
+      <time datetime="2018-10-25T14:35:37.000Z" itemprop="datePublished">2018-10-25</time>
 </a>
 
     </div>
@@ -302,7 +299,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      高级排序算法(n*logN)
+      Java  基础大复习
     </h1>
   
 
@@ -312,13 +309,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法学习/">算法学习</a>
+    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,25 +325,103 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p> <strong>仰望星空,脚踏实地,暗无天日,登峰造极</strong><excerpt in="" index="" |="" 首页摘要=""><br>学习算法思想,修炼编程内功!</excerpt></p>
+        <p> <strong>读书,健身,努力工作,关心身体,保持好心情,成为最棒的自己!</strong><excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
 <a id="more"></a>
-<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h1 id="高级排序算法-n-logN"><a href="#高级排序算法-n-logN" class="headerlink" title="高级排序算法(n*logN)"></a>高级排序算法(n*logN)</h1><h2 id="1-归并排序-Merge-Sort"><a href="#1-归并排序-Merge-Sort" class="headerlink" title="1.归并排序(Merge Sort)"></a>1.归并排序(Merge Sort)</h2><blockquote>
-<p>将待排序的数组无数次分成两部分,最后将剩下的排序(减少了时间复杂度,增加了空间复杂度),归并的过程需要开辟新的数组 </p>
-</blockquote>
-<p><img src="/img/1539061916200.png" alt="1539061916200"></p>
-<p><img src="/img/1539062061025.png" alt="1539062061025"></p>
-<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><ul>
-<li>注释出代码为接近有序的代码进行优化:如果左面比右面小就不用归并操作</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将arr[l,mid]和[mid+1,r]进行归并</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> __marge(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r) &#123;</span><br><span class="line">    T aux[r - l + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= r; i++)</span><br><span class="line">        aux[i - l] = arr[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i = l;</span><br><span class="line">    <span class="keyword">int</span> j = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = l; k &lt;= r; k++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; mid) &#123;</span><br><span class="line">            arr[k] = aux[j - l];</span><br><span class="line">            j++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j &gt; r) &#123;</span><br><span class="line">            arr[k] = aux[i - l];</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (aux[i - l] &lt; aux[j - l]) &#123;</span><br><span class="line">            arr[k] = aux[i - l];</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            arr[k] = aux[j - l];</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//对arr[l....r]的范围进行排序</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> __mergeSort(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) &#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    __mergeSort(arr, l, mid);</span><br><span class="line">    __mergeSort(arr, mid+<span class="number">1</span>, r);</span><br><span class="line">    <span class="comment">//if (arr[mid] &gt; arr[mid + 1])  //对接近有序的数组进行优化</span></span><br><span class="line">    __marge(arr, l, mid, r);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    __mergeSort(arr, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="自底向上实现归并排序-不用进行递归操作"><a href="#自底向上实现归并排序-不用进行递归操作" class="headerlink" title="自底向上实现归并排序(不用进行递归操作)"></a>自底向上实现归并排序(不用进行递归操作)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将arr[l,mid]和[mid+1,r]进行归并</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> __marge(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r) &#123;</span><br><span class="line">    T aux[r - l + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= r; i++)</span><br><span class="line">        aux[i - l] = arr[i];</span><br><span class="line">    <span class="keyword">int</span> i = l;</span><br><span class="line">    <span class="keyword">int</span> j = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = l; k &lt;= r; k++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; mid) &#123;</span><br><span class="line">            arr[k] = aux[j - l];</span><br><span class="line">            j++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j &gt; r) &#123;</span><br><span class="line">            arr[k] = aux[i - l];</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (aux[i - l] &lt; aux[j - l]) &#123;</span><br><span class="line">            arr[k] = aux[i - l];</span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            arr[k] = aux[j - l];</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergerSortBU</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> sz = <span class="number">1</span>; sz &lt;= n; sz += sz) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i + sz &lt; n; i+= sz + sz) &#123;</span><br><span class="line">            __marge(arr, i, i + sz - <span class="number">1</span>, min(i + sz + sz - <span class="number">1</span>, n - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-快速排序-Quick-Sort"><a href="#2-快速排序-Quick-Sort" class="headerlink" title="2.快速排序(Quick Sort)"></a>2.快速排序(Quick Sort)</h2><blockquote>
-<p>最好理解,实现最容易的排序算法,但是如果数组接近有序时,性能将会异常的差</p>
-<p>使用: swap(arr[l],arr[rand()%(h-l+1)+l]);  随机取一个数可以对代码进行优化</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> __privo(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> h) &#123;</span><br><span class="line">    <span class="keyword">int</span> p = arr[l];</span><br><span class="line">    <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">        swap(arr[l],arr[rand()%(h-l+<span class="number">1</span>)+l]);   <span class="comment">//对代码的优化</span></span><br><span class="line">        <span class="keyword">while</span> (l &lt; h &amp;&amp; arr[h] &gt;= p) --h;</span><br><span class="line">        swap(arr[l], arr[h]);</span><br><span class="line">        <span class="keyword">while</span> (l &lt; h &amp;&amp; p &gt; arr[l]) ++l;</span><br><span class="line">        swap(arr[l], arr[h]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt; h)&#123;</span><br><span class="line">        <span class="keyword">return</span>;&#125;</span><br><span class="line">    <span class="keyword">int</span> p = __privo(arr, l, h);</span><br><span class="line">    quickSort(arr, l, p - <span class="number">1</span>);</span><br><span class="line">    quickSort(arr, p + <span class="number">1</span>, h);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"abc"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">int</span> a[] = &#123;<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">23</span>,<span class="number">6</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    quickSort(a, <span class="number">0</span>, <span class="number">8</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"))))"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<the rest="" of="" contents="" |="" 余下全文="">
 
+
+<h1 id="IEDA高效使用"><a href="#IEDA高效使用" class="headerlink" title="IEDA高效使用"></a>IEDA高效使用</h1><h2 id="1-无处不在的跳转"><a href="#1-无处不在的跳转" class="headerlink" title="1.无处不在的跳转"></a>1.无处不在的跳转</h2><ul>
+<li>项目之间跳转: Ctrl + Alt + [ / ]</li>
+<li>文件之间跳转: Ctrl + E (个人更喜欢: Ctrl + Tab)</li>
+<li>跳转已经打开的文件:Ctrl + Alt + 左/右</li>
+</ul>
+<h2 id="2-高校定位代码"><a href="#2-高校定位代码" class="headerlink" title="2.高校定位代码"></a>2.高校定位代码</h2><ul>
+<li>新建书签 ：F11 (带有数字的书签:Ctrl + F11)</li>
+<li>添加收藏:Shift + Alt + F</li>
+</ul>
+<h2 id="3-精准搜索"><a href="#3-精准搜索" class="headerlink" title="3.精准搜索"></a>3.精准搜索</h2><ul>
+<li>搜索指定类:Ctrl + N</li>
+<li>搜索指定文件:Shift + Ctrl + N</li>
+<li>寻找指定函数:Shift + Ctrl + Alt +N</li>
+<li>搜索指定的字符串: Ctrl + Shift + F</li>
+</ul>
+<h2 id="4-列操作"><a href="#4-列操作" class="headerlink" title="4.列操作"></a>4.列操作</h2><ul>
+<li>选中其他一样的符号:Shift + Ctrl + Alt + J</li>
+</ul>
+<h2 id="5-Postfix"><a href="#5-Postfix" class="headerlink" title="5.Postfix"></a>5.Postfix</h2><ul>
+<li>快速写for循环: 100.fori</li>
+<li>快速输出: .sout</li>
+<li>构造器中快速生成属性: 属性名字.field</li>
+<li>快速返回: 返回值.retu..</li>
+<li>判断值是否不等于null: 值.null.. </li>
+</ul>
+<h2 id="6-Alt-Enter"><a href="#6-Alt-Enter" class="headerlink" title="6.Alt + Enter"></a>6.Alt + Enter</h2><ul>
+<li><p>快速创建没有的函数</p>
+</li>
+<li><p>整理代码☞最简洁状态</p>
+</li>
+<li><p>快速格式化代码串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String x= String.format(<span class="string">"name:%s,age:%d"</span>, name, age);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>快速实现接口</p>
+</li>
+<li><p>错误单词拼写提示(错的单词下方会有浪线提示)</p>
+</li>
+<li><p>导包</p>
+</li>
+</ul>
+<h2 id="7-重构"><a href="#7-重构" class="headerlink" title="7.重构"></a>7.重构</h2><ul>
+<li>重构变量: Shift + F6</li>
+<li>重构函数:<ul>
+<li>重构参数: Ctrl + F6</li>
+<li>直接填加参数修改方法:Alt + Enter(优)</li>
+</ul>
+</li>
+</ul>
+<h2 id="8-抽取"><a href="#8-抽取" class="headerlink" title="8.抽取"></a>8.抽取</h2><ul>
+<li>抽取字符串成变量: Ctrl + Alt + V(与有道词典快捷键重复,非常纠结)</li>
+<li>抽取成静态常量: Ctrl + Alt + C</li>
+<li>抽取成成员变量: Ctrl + Alt + F</li>
+<li>抽取函数: Ctrl + Alt + M</li>
+</ul>
+<h2 id="9-git的集成"><a href="#9-git的集成" class="headerlink" title="9.git的集成"></a>9.git的集成</h2><ul>
+<li>右击这行代码前方点击第一个显示作者信息</li>
+<li>查看与版本库中修改过的部分 : Ctrl + Shift + Alt + 上/下</li>
+<li>快速撤销:Alt + Ctrl + Z (QQ 冲突)</li>
+</ul>
+<h2 id="10-local-history"><a href="#10-local-history" class="headerlink" title="10 .local history"></a>10 .local history</h2><ul>
+<li><h2 id="11-关联一切"><a href="#11-关联一切" class="headerlink" title="11.关联一切"></a>11.关联一切</h2></li>
+<li><p>Spring :直达使用的类</p>
+</li>
+<li>关联上数据库:书写SQL提示</li>
+</ul>
+<h2 id="12-断点调试"><a href="#12-断点调试" class="headerlink" title="12.断点调试"></a>12.断点调试</h2><ul>
+<li>添加断点:Ctrl + F8</li>
+<li>断点运行: </li>
+<li>单步运行: F8</li>
+<li>下一个断点: F9</li>
+<li>查看所有断点:Shift + Ctrl +  F8</li>
+<li>禁止所有断点:</li>
+<li>条件断点: Shift + Ctrl +  F8</li>
+<li>setValue: 位置按F2</li>
+</ul>
+<h2 id="13-其他操作"><a href="#13-其他操作" class="headerlink" title="13.其他操作"></a>13.其他操作</h2><ul>
+<li>复制文件: F5</li>
+<li>移动文件: F6</li>
+<li>复制完整文件名: Shift + Ctrl + C</li>
+<li>调出剪切板: Ctrl + Shift + V</li>
+</ul>
+<h2 id="14"><a href="#14" class="headerlink" title="14 ."></a>14 .</h2><ul>
+<li><p>查看类的大纲: Ctrl +F12</p>
+</li>
+<li><p>查看继承图:Ctrl + Shift + Alt + U</p>
+</li>
+<li><p>查看类的继承关系: Ctrl + H</p>
+</li>
+<li><p>方法调用层次:Ctrl + Alt + H</p>
+</li>
+</ul>
+</the>
       
     </div>
     
@@ -354,13 +429,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/10/11/高级排序算法/">高级排序算法(n*logN)</a></p>
+        <p><span>本文标题:</span><a  href="/2018/10/25/IEDA高效使用/">Java  基础大复习</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 Arnold 的个人博客">Arnold</a></p>
-        <p><span>发布时间:</span>2018年10月11日 - 22时35分</p>
-        <p><span>最后更新:</span>2018年10月11日 - 12时34分</p>
+        <p><span>发布时间:</span>2018年10月25日 - 22时35分</p>
+        <p><span>最后更新:</span>2018年11月20日 - 08时43分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/10/11/高级排序算法/" title="高级排序算法(n*logN)">https://github.com/SDIJJ/sdijj.github.io/2018/10/11/高级排序算法/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://github.com/SDIJJ/sdijj.github.io/2018/10/11/高级排序算法/　　作者: Arnold" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/10/25/IEDA高效使用/" title="Java  基础大复习">https://github.com/SDIJJ/sdijj.github.io/2018/10/25/IEDA高效使用/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://github.com/SDIJJ/sdijj.github.io/2018/10/25/IEDA高效使用/　　作者: Arnold" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -371,18 +446,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/10/13/堆的学习(Heap)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2018/11/02/MySql复习/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          堆(Heap)
+          MySql复习
         
       </div>
     </a>
   
   
-    <a  href="/2018/10/10/基础的排序算法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基础排序算法</div>
+    <a  href="/2018/10/24/Java基础大复习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java  基础大复习</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -394,7 +469,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高级排序算法-n-logN"><span class="toc-number">1.</span> <span class="toc-text">高级排序算法(n*logN)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-归并排序-Merge-Sort"><span class="toc-number">1.1.</span> <span class="toc-text">1.归并排序(Merge Sort)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现代码"><span class="toc-number">1.1.1.</span> <span class="toc-text">实现代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自底向上实现归并排序-不用进行递归操作"><span class="toc-number">1.1.2.</span> <span class="toc-text">自底向上实现归并排序(不用进行递归操作)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-快速排序-Quick-Sort"><span class="toc-number">1.2.</span> <span class="toc-text">2.快速排序(Quick Sort)</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IEDA高效使用"><span class="toc-number">1.</span> <span class="toc-text">IEDA高效使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-无处不在的跳转"><span class="toc-number">1.1.</span> <span class="toc-text">1.无处不在的跳转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-高校定位代码"><span class="toc-number">1.2.</span> <span class="toc-text">2.高校定位代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-精准搜索"><span class="toc-number">1.3.</span> <span class="toc-text">3.精准搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-列操作"><span class="toc-number">1.4.</span> <span class="toc-text">4.列操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Postfix"><span class="toc-number">1.5.</span> <span class="toc-text">5.Postfix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Alt-Enter"><span class="toc-number">1.6.</span> <span class="toc-text">6.Alt + Enter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-重构"><span class="toc-number">1.7.</span> <span class="toc-text">7.重构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-抽取"><span class="toc-number">1.8.</span> <span class="toc-text">8.抽取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-git的集成"><span class="toc-number">1.9.</span> <span class="toc-text">9.git的集成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-local-history"><span class="toc-number">1.10.</span> <span class="toc-text">10 .local history</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-关联一切"><span class="toc-number">1.11.</span> <span class="toc-text">11.关联一切</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-断点调试"><span class="toc-number">1.12.</span> <span class="toc-text">12.断点调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-其他操作"><span class="toc-number">1.13.</span> <span class="toc-text">13.其他操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14"><span class="toc-number">1.14.</span> <span class="toc-text">14 .</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -456,7 +531,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '高级排序算法(n*logN)', // 可选。默认为 location.href
+  id: 'Java  基础大复习', // 可选。默认为 location.href
   owner: 'sdijj',
   repo: 'sdijj.github.io',
   oauth: {
@@ -473,13 +548,13 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/10/13/堆的学习(Heap)/" title="上一篇: 堆(Heap)">
+            <a  href="/2018/11/02/MySql复习/" title="上一篇: MySql复习">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/10/10/基础的排序算法/" title="下一篇: 基础排序算法">
+            <a  href="/2018/10/24/Java基础大复习/" title="下一篇: Java  基础大复习">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>MySql复习 | 楠の博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="仰望星空,脚踏实地">
+<meta name="keywords" content="MySql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySql复习">
+<meta property="og:url" content="https://github.com/SDIJJ/sdijj.github.io/2018/11/02/MySql复习/index.html">
+<meta property="og:site_name" content="楠の博客">
+<meta property="og:description" content="仰望星空,脚踏实地">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-20T00:38:30.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySql复习">
+<meta name="twitter:description" content="仰望星空,脚踏实地">
+  
+    <link rel="alternative" href="/atom.xml" title="楠の博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/1.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Arnold</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">敲敲代码,聊聊人生</p>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/开发工具/">开发工具</a></li>
+                        
+                            <li><a  href="/categories/开源框架/">开源框架</a></li>
+                        
+                            <li><a  href="/categories/项目总结/">项目总结</a></li>
+                        
+                            <li><a  href="/categories/算法学习/">算法学习</a></li>
+                        
+                            <li><a  href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/SDIJJ" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="https://weibo.com/6204498677/info" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/MySql/" style="font-size: 10px;">MySql</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">喜欢编程,喜爱运动,酷爱骑行,热爱数码...</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Arnold</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/1.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Arnold</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">敲敲代码,聊聊人生</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">开发工具</a></li>
+                
+                    <li><a href="/categories/开源框架/">开源框架</a></li>
+                
+                    <li><a href="/categories/项目总结/">项目总结</a></li>
+                
+                    <li><a href="/categories/算法学习/">算法学习</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/SDIJJ" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/6204498677/info" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-MySql复习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/11/02/MySql复习/" class="article-date">
+      <time datetime="2018-11-02T14:35:37.000Z" itemprop="datePublished">2018-11-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySql复习
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySql/">MySql</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p> <strong>仰望星空,脚踏实地</strong><excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+<a id="more"></a>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h3 id="MySql-复习"><a href="#MySql-复习" class="headerlink" title="MySql 复习"></a>MySql 复习</h3><h4 id="完成对MYSQL数据库的多表查询及建表的操作"><a href="#完成对MYSQL数据库的多表查询及建表的操作" class="headerlink" title="完成对MYSQL数据库的多表查询及建表的操作"></a>完成对MYSQL数据库的多表查询及建表的操作</h4><h4 id="掌握MYSQL中多表的创建及多表的查询"><a href="#掌握MYSQL中多表的创建及多表的查询" class="headerlink" title="掌握MYSQL中多表的创建及多表的查询"></a>掌握MYSQL中多表的创建及多表的查询</h4><h4 id="掌握MYSQL中的表关系分析并能正确建表"><a href="#掌握MYSQL中的表关系分析并能正确建表" class="headerlink" title="掌握MYSQL中的表关系分析并能正确建表"></a>掌握MYSQL中的表关系分析并能正确建表</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 编写顺序</span></span><br><span class="line">S..F..W..G..H..O</span><br><span class="line"><span class="keyword">select</span> .. <span class="keyword">from</span> .. <span class="keyword">where</span> .. <span class="keyword">group</span> <span class="keyword">by</span> .. <span class="keyword">having</span> .. <span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line"><span class="comment">-- 执行顺序</span></span><br><span class="line">F .. W .. G .. H .. S .. O</span><br><span class="line"><span class="keyword">from</span> .. <span class="keyword">where</span> .. <span class="keyword">group</span> <span class="keyword">by</span> .. <span class="keyword">having</span> .. <span class="keyword">select</span> .. <span class="keyword">order</span> <span class="keyword">by</span></span><br></pre></td></tr></table></figure>
+<p>内容:</p>
+<p>​    数据库的创建 : create database 数据库的名 character set 字符集  collate 校对规则</p>
+<p>​    数据库的删除: drop database 数据库名</p>
+<p>​    修改: alter database 数据库 character set 字符集(utf8)</p>
+<p>​    查询:  show databases;</p>
+<p>​          show create database 数据库的名字</p>
+<p>​          select database();</p>
+<p>​    切换数据库 :</p>
+<p>​            use 数据库的名字</p>
+<p>​    </p>
+<p>​    表结构的操作:</p>
+<p>​        创建:  create table 表名(    </p>
+<p>​                列名 列的类型  列的约束,</p>
+<p>​                列名 列的类型  列的约</p>
+<p>​            )</p>
+<p>​            列的类型: char / varchar   </p>
+<p>​            列的约束: </p>
+<p>​                    primary key 主键约束</p>
+<p>​                    unique : 唯一约束</p>
+<p>​                    not null 非空约束</p>
+<p>​              自动增长 : auto_increment</p>
+<p>​         删除 :  drop table 表名</p>
+<p>​        修改:   alter table 表名 (add, modify, change , drop)</p>
+<p>​            rename table 旧表名  to 新表名</p>
+<p>​            alter table 表名 character set 字符集</p>
+<p>​       查询表结构:</p>
+<p>​            show tables; 查询出所有的表</p>
+<p>​            show create table 表名: 表的创建语句, 表的定义</p>
+<p>​            desc 表名:　表的结构</p>
+<p>​    表中数据的操作</p>
+<p>​        插入：　 insert into 表名(列名,列名) values(值1,值2);</p>
+<p>​        删除:        delete from 表名 [where 条件]</p>
+<p>​        修改:        update 表名 set 列名=’值’ ,列名=’值’ [where 条件];</p>
+<p>​        查询:    select [distinct]  * [列名1,列名2] from 表名 [where 条件]</p>
+<p>​              as关键字: 别名</p>
+<p>​               where条件后面:</p>
+<p>​        </p>
+<p>​                    关系运算符:  &gt; &gt;= &lt; &lt;= !=  &lt;&gt;</p>
+<p>​                        –判断某一列是否为空:  is null    is not null</p>
+<p>​                        in 在某范围内</p>
+<p>​                        between…and</p>
+<p>​                    逻辑运算符: and or not</p>
+<p>​                    模糊查询:  like    </p>
+<p>​                            _ : 代表单个字符</p>
+<p>​                            %: 代表的是多个字符</p>
+<p>​                    分组: group by </p>
+<p>​                    分组之后条件过滤:  having</p>
+<p>​                    聚合函数: sum()  ,avg() , count()  ,max(), min()</p>
+<p>​                    排序: order by  (asc 升序, desc 降序)                    </p>
+<p>​                    </p>
+<p>SQL 会创建多表及多表的关系</p>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求:"></a>需求:</h4><p>分类表和商品表之间是不是有关系? 如果有关系,在数据库中如何表示这种关系</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">category</span>(</span><br><span class="line">  cid <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">  cname <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">  cdesc <span class="built_in">varchar</span>(<span class="number">31</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'手机数码'</span>,<span class="string">'电子产品,黑马生产'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'鞋靴箱包'</span>,<span class="string">'江南皮鞋厂倾情打造'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'香烟酒水'</span>,<span class="string">'黄鹤楼,茅台,二锅头'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'酸奶饼干'</span>,<span class="string">'娃哈哈,蒙牛酸酸乳'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'馋嘴零食'</span>,<span class="string">'瓜子花生,八宝粥,辣条'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">category</span>;</span><br><span class="line"><span class="keyword">select</span> cname,cdesc <span class="keyword">from</span> <span class="keyword">category</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--所有商品</span></span><br><span class="line">1.商品ID</span><br><span class="line">2.商品名称</span><br><span class="line">3.商品的价格</span><br><span class="line">4.生产日期</span><br><span class="line">5.商品分类ID</span><br><span class="line"></span><br><span class="line">商品和商品分类 : 所属关系</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> product(</span><br><span class="line">	pid <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">  	pname <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">  	price <span class="keyword">double</span>,</span><br><span class="line">  	pdate <span class="keyword">timestamp</span>,</span><br><span class="line">  	cno <span class="built_in">int</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'小米mix4'</span>,<span class="number">998</span>,<span class="literal">null</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'锤子'</span>,<span class="number">2888</span>,<span class="literal">null</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'阿迪王'</span>,<span class="number">99</span>,<span class="literal">null</span>,<span class="number">2</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'老村长'</span>,<span class="number">88</span>,<span class="literal">null</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'劲酒'</span>,<span class="number">35</span>,<span class="literal">null</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'小熊饼干'</span>,<span class="number">1</span>,<span class="literal">null</span>,<span class="number">4</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'卫龙辣条'</span>,<span class="number">1</span>,<span class="literal">null</span>,<span class="number">5</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'旺旺大饼'</span>,<span class="number">1</span>,<span class="literal">null</span>,<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">//插入数据会失败</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'充气的'</span>,<span class="number">1</span>,<span class="literal">null</span>,<span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="技术分析"><a href="#技术分析" class="headerlink" title="技术分析:"></a>技术分析:</h4><ul>
+<li><p>多表之间的关系如何来维护</p>
+<p>外键约束: foreign key</p>
+<ul>
+<li><p>给product中的这个cno 添加一个外键约束</p>
+<p>alter table product add foreign key(cno)  references  category(cid);</p>
+</li>
+<li><p>自己挖坑</p>
+</li>
+<li><p>从分类表中,删除分类为5信息,</p>
+<ul>
+<li>delete from category where cid =5;  //删除失败</li>
+<li>首先得去product表, 删除所有分类ID5  商品</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>建数据库原则:</p>
+<ul>
+<li>通常情况下,一个项目/应用建一个数据库</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>多表之间的建表原则</p>
+<ul>
+<li><p>一对多 : 商品和分类</p>
+<ul>
+<li><p>建表原则: 在多的一方添加一个外键,指向一的一方的主键</p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><p>多对多: 老师和学生, 学生和课程</p>
+<p>建表原则: 建立一张中间表,将多对多的关系,拆分成一对多的关系,中间表至少要有两个外键,分别指向原来的那两张表</p>
+<p>​</p>
+</li>
+<li><p>一对一: 班级和班长, 公民和身份证, 国家和国旗</p>
+<ul>
+<li><p>建表原则:  </p>
+<ul>
+<li>将一对一的情况,当作是一对多情况处理,在任意一张表添加一个外键,并且这个外键要唯一,指向另外一张表</li>
+<li>直接将两张表合并成一张表</li>
+<li>将两张表的主键建立起连接,让两张表里面主键相等</li>
+</ul>
+</li>
+<li><p>实际用途: 用的不是很多.    (拆表操作  )</p>
+<ul>
+<li>相亲网站: <ul>
+<li>个人信息 : 姓名,性别,年龄,身高,体重,三围,兴趣爱好,(年收入,  特长,学历, 职业, 择偶目标,要求)</li>
+<li>拆表操作 : 将个人的常用信息和不常用信息,减少表的臃肿, </li>
+</ul>
+</li>
+</ul>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>​</p>
+<ul>
+<li><p>网上商城表实例的分析:  用户购物流程</p>
+<p>​</p>
+</li>
+</ul>
+<ul>
+<li><p>用户表 (用户的ID,用户名,密码,手机)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>(</span><br><span class="line">	uid <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">  	username <span class="built_in">varchar</span>(<span class="number">31</span>),</span><br><span class="line">  	<span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">31</span>),</span><br><span class="line">  	phone  <span class="built_in">varchar</span>(<span class="number">11</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">'zhangsan'</span>,<span class="string">'123'</span>,<span class="string">'13811118888'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>订单表 (订单编号,总价,订单时间 ,地址,外键用户的ID)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orders(</span><br><span class="line">	<span class="keyword">oid</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">  	<span class="keyword">sum</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    otime <span class="keyword">timestamp</span>,</span><br><span class="line">  	address <span class="built_in">varchar</span>(<span class="number">100</span>),</span><br><span class="line">  	uno <span class="built_in">int</span>,</span><br><span class="line">  	foreign <span class="keyword">key</span>(uno) <span class="keyword">references</span> <span class="keyword">user</span>(uid)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orders <span class="keyword">values</span>(<span class="number">1</span>,<span class="number">200</span>,<span class="literal">null</span>,<span class="string">'黑马前台旁边小黑屋'</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orders <span class="keyword">values</span>(<span class="number">2</span>,<span class="number">250</span>,<span class="literal">null</span>,<span class="string">'黑马后台旁边1702'</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>商品表 (商品ID, 商品名称,商品价格,外键cno)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> product(</span><br><span class="line">	pid <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">  	pname <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">  	price <span class="keyword">double</span>,</span><br><span class="line">  	cno <span class="built_in">int</span>,</span><br><span class="line">  	foreign <span class="keyword">key</span>(cno) <span class="keyword">references</span> <span class="keyword">category</span>(cid)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'小米mix4'</span>,<span class="number">998</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'锤子'</span>,<span class="number">2888</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'阿迪王'</span>,<span class="number">99</span>,<span class="number">2</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'老村长'</span>,<span class="number">88</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'劲酒'</span>,<span class="number">35</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'小熊饼干'</span>,<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'卫龙辣条'</span>,<span class="number">1</span>,<span class="number">5</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> product <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'旺旺大饼'</span>,<span class="number">1</span>,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<ul>
+<li><p>订单项: 中间表(订单ID,商品ID,商品数量,订单项总价)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orderitem(</span><br><span class="line">	ono <span class="built_in">int</span>,</span><br><span class="line">  	pno <span class="built_in">int</span>,</span><br><span class="line">  	foreign <span class="keyword">key</span>(ono) <span class="keyword">references</span> orders(<span class="keyword">oid</span>),</span><br><span class="line">  	foreign <span class="keyword">key</span>(pno) <span class="keyword">references</span> product(pid),</span><br><span class="line">  	ocount <span class="built_in">int</span>,</span><br><span class="line">  	subsum <span class="keyword">double</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">--给1号订单添加商品 200块钱的商品</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orderitem <span class="keyword">values</span>(<span class="number">1</span>,<span class="number">7</span>,<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orderitem <span class="keyword">values</span>(<span class="number">1</span>,<span class="number">8</span>,<span class="number">101</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--给2号订单添加商品 250块钱的商品 ()</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orderitem <span class="keyword">values</span>(<span class="number">2</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">35</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orderitem <span class="keyword">values</span>(<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">99</span>);</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<ul>
+<li><p>商品分类表(分类ID,分类名称,分类描述)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">category</span>(</span><br><span class="line">	cid <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">  	cname <span class="built_in">varchar</span>(<span class="number">15</span>),</span><br><span class="line">  	cdesc <span class="built_in">varchar</span>(<span class="number">100</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'手机数码'</span>,<span class="string">'电子产品,黑马生产'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'鞋靴箱包'</span>,<span class="string">'江南皮鞋厂倾情打造'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'香烟酒水'</span>,<span class="string">'黄鹤楼,茅台,二锅头'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'酸奶饼干'</span>,<span class="string">'娃哈哈,蒙牛酸酸乳'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">category</span> <span class="keyword">values</span>(<span class="literal">null</span>,<span class="string">'馋嘴零食'</span>,<span class="string">'瓜子花生,八宝粥,辣条'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>多表之间的关系如何维护: 外键约束 :   foreign key</li>
+<li>添加一个外键: alter table product add foreign key(cno)  references category(cid);<ul>
+<li>​        foreign key(cno) references category(cid)</li>
+<li>删除的时候, 先删除外键关联的所有数据,再才能删除分类的数据</li>
+</ul>
+</li>
+<li>建表原则:<ul>
+<li>一对多:<ul>
+<li>建表原则: 在多的一方增加一个外键,指向一的一方</li>
+</ul>
+</li>
+<li>多对多:<ul>
+<li>建表原则: 将多对多转成一对多的关系,创建一张中间表</li>
+</ul>
+</li>
+<li>一对一: 不常用, 拆表操作<ul>
+<li>建表原则:  将两张表合并成一张表<ul>
+<li>将两张表的主键建立起关系</li>
+<li>将一对一的关系当作一对多的关系去处理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>主键约束: 默认就是不能为空, 唯一</p>
+<ul>
+<li>外键都是指向另外一张表的主键</li>
+<li>主键一张表只能有一个</li>
+</ul>
+<p>唯一约束:  列面的内容, 必须是唯一, 不能出现重复情况, 为空</p>
+<ul>
+<li>唯一约束不可以作为其它表的外键</li>
+<li>可以有多个唯一约束</li>
+</ul>
+<p>一对多 : 建表原则: 在多的一方添加一个外键,指向一的一方</p>
+<p>多对多: 建表原则:</p>
+<p>​        拆成一对多</p>
+<p>​        创建一张中间表, 至少要有两个外键, 指向原来的表</p>
+<p>一对一: 建表原则: 合并一张表, 将主键建立关系 , 将它当作一对多的情况来处理</p>
+<ul>
+<li><p>数据库客户端软件</p>
+<p>​</p>
+</li>
+</ul>
+<h3 id="使用商城表完成对商品信息的多表查询"><a href="#使用商城表完成对商品信息的多表查询" class="headerlink" title="使用商城表完成对商品信息的多表查询"></a>使用商城表完成对商品信息的多表查询</h3><h4 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析:"></a>需求分析:</h4><p>在我们的商城案例中,我的订单中包含很多信息.打开我的订单需要去查询表</p>
+<h4 id="技术分析-1"><a href="#技术分析-1" class="headerlink" title="技术分析:"></a>技术分析:</h4><h4 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h4><ul>
+<li>交叉连接查询  笛卡尔积</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">USER</span> ,orders ;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>内连接查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="string">`user`</span> u <span class="keyword">JOIN</span> orders  o <span class="keyword">ON</span> u.uid=o.oid;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>左外连接</li>
+</ul>
+<ul>
+<li>右外连接  </li>
+</ul>
+<h4 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h4><ul>
+<li><p>每页数据数据3</p>
+</li>
+<li><p>起始索引从0 </p>
+</li>
+<li><p>第1页: 0</p>
+</li>
+<li><p>第2页: 3</p>
+<p>起始索引:  index 代表显示第几页 页数从1开始</p>
+<p>每页显示3条数据</p>
+<p>startIndex  = (index-1)*3</p>
+<p>​</p>
+</li>
+</ul>
+<p>第一个参数是索引 </p>
+<p>第二个参数显示的个数</p>
+<p>select * from product limit 0,3;</p>
+<p>select * from product limit 3,3;</p>
+<h4 id="子查询-了解的内容-非常重要"><a href="#子查询-了解的内容-非常重要" class="headerlink" title="子查询(了解的内容,非常重要)"></a>子查询(了解的内容,非常重要)</h4><p>查询出(商品名称,商品分类名称)信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>  查询分类名称为手机数码的所有商品</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> product <span class="keyword">where</span> cname =<span class="string">'手机数码'</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h4><ul>
+<li>按照商品分类的名称统计商品的个数:</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询1号订单的订单项信息和商品信息</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="多表查询练习数据"><a href="#多表查询练习数据" class="headerlink" title="多表查询练习数据"></a>多表查询练习数据</h4><ul>
+<li>员工信息表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--员工信息表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> emp(</span><br><span class="line">	empno <span class="built_in">INT</span>,</span><br><span class="line">	ename <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	job <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	mgr	<span class="built_in">INT</span>,</span><br><span class="line">	hiredate <span class="built_in">DATE</span>,</span><br><span class="line">	sal	<span class="built_in">DECIMAL</span>(<span class="number">7</span>,<span class="number">2</span>),</span><br><span class="line">	comm <span class="built_in">DECIMAL</span>(<span class="number">7</span>,<span class="number">2</span>),</span><br><span class="line">	deptno <span class="built_in">INT</span></span><br><span class="line">) ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7369</span>,<span class="string">'SMITH'</span>,<span class="string">'CLERK'</span>,<span class="number">7902</span>,<span class="string">'1980-12-17'</span>,<span class="number">800</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7499</span>,<span class="string">'ALLEN'</span>,<span class="string">'SALESMAN'</span>,<span class="number">7698</span>,<span class="string">'1981-02-20'</span>,<span class="number">1600</span>,<span class="number">300</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7521</span>,<span class="string">'WARD'</span>,<span class="string">'SALESMAN'</span>,<span class="number">7698</span>,<span class="string">'1981-02-22'</span>,<span class="number">1250</span>,<span class="number">500</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7566</span>,<span class="string">'JONES'</span>,<span class="string">'MANAGER'</span>,<span class="number">7839</span>,<span class="string">'1981-04-02'</span>,<span class="number">2975</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7654</span>,<span class="string">'MARTIN'</span>,<span class="string">'SALESMAN'</span>,<span class="number">7698</span>,<span class="string">'1981-09-28'</span>,<span class="number">1250</span>,<span class="number">1400</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7698</span>,<span class="string">'BLAKE'</span>,<span class="string">'MANAGER'</span>,<span class="number">7839</span>,<span class="string">'1981-05-01'</span>,<span class="number">2850</span>,<span class="literal">NULL</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7782</span>,<span class="string">'CLARK'</span>,<span class="string">'MANAGER'</span>,<span class="number">7839</span>,<span class="string">'1981-06-09'</span>,<span class="number">2450</span>,<span class="literal">NULL</span>,<span class="number">10</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7788</span>,<span class="string">'SCOTT'</span>,<span class="string">'ANALYST'</span>,<span class="number">7566</span>,<span class="string">'1987-04-19'</span>,<span class="number">3000</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7839</span>,<span class="string">'KING'</span>,<span class="string">'PRESIDENT'</span>,<span class="literal">NULL</span>,<span class="string">'1981-11-17'</span>,<span class="number">5000</span>,<span class="literal">NULL</span>,<span class="number">10</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7844</span>,<span class="string">'TURNER'</span>,<span class="string">'SALESMAN'</span>,<span class="number">7698</span>,<span class="string">'1981-09-08'</span>,<span class="number">1500</span>,<span class="number">0</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7876</span>,<span class="string">'ADAMS'</span>,<span class="string">'CLERK'</span>,<span class="number">7788</span>,<span class="string">'1987-05-23'</span>,<span class="number">1100</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7900</span>,<span class="string">'JAMES'</span>,<span class="string">'CLERK'</span>,<span class="number">7698</span>,<span class="string">'1981-12-03'</span>,<span class="number">950</span>,<span class="literal">NULL</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7902</span>,<span class="string">'FORD'</span>,<span class="string">'ANALYST'</span>,<span class="number">7566</span>,<span class="string">'1981-12-03'</span>,<span class="number">3000</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7934</span>,<span class="string">'MILLER'</span>,<span class="string">'CLERK'</span>,<span class="number">7782</span>,<span class="string">'1982-01-23'</span>,<span class="number">1300</span>,<span class="literal">NULL</span>,<span class="number">10</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">values</span>(<span class="number">7981</span>,<span class="string">'MILLER'</span>,<span class="string">'CLERK'</span>,<span class="number">7788</span>,<span class="string">'1992-01-23'</span>,<span class="number">2600</span>,<span class="number">500</span>,<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>部门信息表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dept(</span><br><span class="line">	deptno		<span class="built_in">INT</span>,</span><br><span class="line">	dname		<span class="built_in">varchar</span>(<span class="number">14</span>),</span><br><span class="line">	loc		<span class="built_in">varchar</span>(<span class="number">13</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">values</span>(<span class="number">10</span>, <span class="string">'ACCOUNTING'</span>, <span class="string">'NEW YORK'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">values</span>(<span class="number">20</span>, <span class="string">'RESEARCH'</span>, <span class="string">'DALLAS'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">values</span>(<span class="number">30</span>, <span class="string">'SALES'</span>, <span class="string">'CHICAGO'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">values</span>(<span class="number">40</span>, <span class="string">'OPERATIONS'</span>, <span class="string">'BOSTON'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>基本查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--所有员工的信息</span></span><br><span class="line"><span class="keyword">select</span> *<span class="keyword">from</span> emp;</span><br><span class="line"><span class="comment">--薪资大于等于1000并且小于等于2000的员工信息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal &gt; <span class="number">1000</span> <span class="keyword">AND</span> sal &lt;<span class="number">2000</span>;</span><br><span class="line"><span class="comment">--从员工表中查询出所有的部门编号</span></span><br><span class="line"><span class="keyword">SELECT</span> emp.<span class="string">`deptno`</span> <span class="keyword">FROM</span> emp <span class="keyword">GROUP</span> <span class="keyword">BY</span> emp.deptno;</span><br><span class="line"><span class="comment">--查询出名字以A开头的员工的信息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> emp.<span class="string">`ename`</span> <span class="keyword">LIKE</span> <span class="string">'A%'</span>;</span><br><span class="line"><span class="comment">--查询出名字第二个字母是L的员工信息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> emp.<span class="string">`ename`</span> <span class="keyword">LIKE</span> <span class="string">'_L%'</span>;</span><br><span class="line"><span class="comment">--查询出没有奖金的员工信息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> emp.<span class="string">`comm`</span> <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">--所有员工的平均工资</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(emp.<span class="string">`sal`</span>) 平均工资  <span class="keyword">FROM</span> emp;</span><br><span class="line"><span class="comment">--所有员工的工资总和</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">SUM</span>(emp.<span class="string">`sal`</span>) 平均工资  <span class="keyword">FROM</span> emp;</span><br><span class="line"><span class="comment">--所有员工的数量</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(emp.<span class="string">`empno`</span>)   <span class="keyword">FROM</span> emp;</span><br><span class="line"><span class="comment">--最高工资</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">MAX</span>(emp.<span class="string">`sal`</span>) <span class="keyword">FROM</span> emp;</span><br><span class="line"><span class="comment">--最少工资</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">MIN</span>(emp.<span class="string">`sal`</span>) <span class="keyword">FROM</span> emp;</span><br><span class="line"><span class="comment">--最高工资的员工信息</span></span><br><span class="line"><span class="comment">--最低工资的员工信息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">HAVING</span>  emp.<span class="string">`sal`</span> = <span class="keyword">MIN</span>(emp.<span class="string">`sal`</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>分组查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--每个部门的平均工资</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>子查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 单行子查询(&gt; &lt; &gt;= &lt;= = &lt;&gt;)</span></span><br><span class="line">	<span class="comment">-- 查询出高于10号部门的平均工资的员工信息</span></span><br><span class="line">	</span><br><span class="line"><span class="comment">-- 多行子查询(in  not in any all)    &gt;any  &gt;all</span></span><br><span class="line">	<span class="comment">-- 查询出比10号部门任何员工薪资高的员工信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 多列子查询(实际使用较少)   in</span></span><br><span class="line">	<span class="comment">-- 和10号部门同名同工作的员工信息</span></span><br><span class="line"><span class="comment">-- Select接子查询</span></span><br><span class="line">	<span class="comment">-- 获取员工的名字和部门的名字</span></span><br><span class="line"><span class="comment">-- from后面接子查询</span></span><br><span class="line">	<span class="comment">-- 查询emp表中经理信息</span></span><br><span class="line"><span class="comment">-- where 接子查询</span></span><br><span class="line">	<span class="comment">-- 薪资高于10号部门平均工资的所有员工信息</span></span><br><span class="line"><span class="comment">-- having后面接子查询</span></span><br><span class="line">	<span class="comment">-- 有哪些部门的平均工资高于30号部门的平均工资</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 工资&gt;JONES工资</span></span><br><span class="line"><span class="comment">-- 查询与SCOTT同一个部门的员工</span></span><br><span class="line"><span class="comment">-- 工资高于30号部门所有人的员工信息</span></span><br><span class="line"><span class="comment">-- 查询工作和工资与MARTIN完全相同的员工信息</span></span><br><span class="line"><span class="comment">-- 有两个以上直接下属的员工信息</span></span><br><span class="line"><span class="comment">-- 查询员工编号为7788的员工名称,员工工资,部门名称,部门地址</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>SQL查询的综合案例</li>
+</ul>
+<ol>
+<li>查询出高于本部门平均工资的员工信息</li>
+</ol>
+<ol start="2">
+<li>列出达拉斯加工作的人中,比纽约平均工资高的人</li>
+<li>查询7369员工编号,姓名,经理编号和经理姓名</li>
+<li>查询出各个部门薪水最高的员工所有信息</li>
+</ol>
+<h4 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">test</span>(</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">CHAR</span>(<span class="number">20</span>),</span><br><span class="line">  kecheng <span class="built_in">CHAR</span>(<span class="number">20</span>),</span><br><span class="line">  fenshu <span class="built_in">CHAR</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">VALUES</span>(<span class="string">'张三'</span>,<span class="string">'语文'</span>,<span class="number">81</span>),</span><br><span class="line">(<span class="string">'张三'</span>,<span class="string">'数学'</span>,<span class="number">75</span>),</span><br><span class="line">(<span class="string">'李四'</span>,<span class="string">'语文'</span>,<span class="number">76</span>),</span><br><span class="line">(<span class="string">'李四'</span>,<span class="string">'数学'</span>,<span class="number">90</span>),</span><br><span class="line">(<span class="string">'王五'</span>,<span class="string">'语文'</span>,<span class="number">81</span>),</span><br><span class="line">(<span class="string">'王五'</span>,<span class="string">'数学'</span>,<span class="number">82</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--请用一条Sql语句查处分数大于80的学生</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line">- 交叉连接查询  笛卡尔积</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">category</span>;</span><br><span class="line"></span><br><span class="line">笛卡尔积 ,查出来是两张表的乘积 ,查出来的结果没有意义</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product,<span class="keyword">category</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--过滤出有意义的数据</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product,<span class="keyword">category</span> <span class="keyword">WHERE</span> cno=cid;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product <span class="keyword">AS</span> p,<span class="keyword">category</span> <span class="keyword">AS</span> c <span class="keyword">WHERE</span> p.cno=c.cid;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product p,<span class="keyword">category</span> c <span class="keyword">WHERE</span> p.cno=c.cid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--数据准备</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product <span class="keyword">VALUES</span>(<span class="literal">NULL</span>,<span class="string">'耐克帝'</span>,<span class="number">10</span>,<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">- 内连接查询</span><br><span class="line"><span class="comment">-- 隐式内链接</span></span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product p,<span class="keyword">category</span> c <span class="keyword">WHERE</span> p.cno=c.cid;</span><br><span class="line"><span class="comment">-- 显示内链接</span></span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product p <span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="keyword">category</span> c <span class="keyword">ON</span> p.cno=c.cid;	</span><br><span class="line"><span class="comment">-- 区别:</span></span><br><span class="line">	隐式内链接: 在查询出结果的基础上去做的WHERE条件过滤</span><br><span class="line">	显示内链接: 带着条件去查询结果, 执行效率要高</span><br><span class="line"></span><br><span class="line">- 左外连接</span><br><span class="line">  左外连接,会将左表中的所有数据都查询出来, 如果右表中没有对应的数据,用NULL代替</span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product p <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> <span class="keyword">category</span> c <span class="keyword">ON</span> p.cno=c.cid;</span><br><span class="line"></span><br><span class="line">- 准备工作</span><br><span class="line">  <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">category</span> <span class="keyword">VALUES</span>(<span class="number">100</span>,<span class="string">'电脑办公'</span>,<span class="string">'电脑叉叉差'</span>);</span><br><span class="line">- 右外连接: 会将右表所有数据都查询出来, 如果左表没有对应数据的话, 用NULL代替</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product p <span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> <span class="keyword">category</span> c <span class="keyword">ON</span> p.cno=c.cid;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment">-- 查询分类名称为手机数码的所有商品</span></span><br><span class="line">   1.查询分类名为手机数码的ID</span><br><span class="line">   <span class="keyword">SELECT</span> cid <span class="keyword">FROM</span> <span class="keyword">category</span> <span class="keyword">WHERE</span> cname=<span class="string">'手机数码'</span>;</span><br><span class="line">   2.得出ID为1的结果</span><br><span class="line">   <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> product <span class="keyword">WHERE</span> cno = (<span class="keyword">SELECT</span> cid <span class="keyword">FROM</span> <span class="keyword">category</span> <span class="keyword">WHERE</span> cname=<span class="string">'手机数码'</span>);</span><br><span class="line">   </span><br><span class="line"><span class="comment">-- 查询出(商品名称,商品分类名称)信息</span></span><br><span class="line">   <span class="comment">--左连接</span></span><br><span class="line">   <span class="keyword">SELECT</span> p.pname,c.cname <span class="keyword">FROM</span> product p <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> <span class="keyword">category</span> c <span class="keyword">ON</span> p.cno = c.cid;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">--子查询</span></span><br><span class="line">   <span class="keyword">SELECT</span> pname ,(<span class="keyword">SELECT</span> cname <span class="keyword">FROM</span> <span class="keyword">category</span> c <span class="keyword">WHERE</span>  p.cno=c.cid ) <span class="keyword">AS</span> 商品分类名称  <span class="keyword">FROM</span> product p;</span><br><span class="line">   </span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> emp(</span><br><span class="line">	empno <span class="built_in">INT</span>,</span><br><span class="line">	ename <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	job <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">	mgr	<span class="built_in">INT</span>,</span><br><span class="line">	hiredate <span class="built_in">DATE</span>,</span><br><span class="line">	sal	<span class="built_in">DECIMAL</span>(<span class="number">7</span>,<span class="number">2</span>),</span><br><span class="line">	comm <span class="built_in">DECIMAL</span>(<span class="number">7</span>,<span class="number">2</span>),</span><br><span class="line">	deptno <span class="built_in">INT</span></span><br><span class="line">) ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7369</span>,<span class="string">'SMITH'</span>,<span class="string">'CLERK'</span>,<span class="number">7902</span>,<span class="string">'1980-12-17'</span>,<span class="number">800</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7499</span>,<span class="string">'ALLEN'</span>,<span class="string">'SALESMAN'</span>,<span class="number">7698</span>,<span class="string">'1981-02-20'</span>,<span class="number">1600</span>,<span class="number">300</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7521</span>,<span class="string">'WARD'</span>,<span class="string">'SALESMAN'</span>,<span class="number">7698</span>,<span class="string">'1981-02-22'</span>,<span class="number">1250</span>,<span class="number">500</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7566</span>,<span class="string">'JONES'</span>,<span class="string">'MANAGER'</span>,<span class="number">7839</span>,<span class="string">'1981-04-02'</span>,<span class="number">2975</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7654</span>,<span class="string">'MARTIN'</span>,<span class="string">'SALESMAN'</span>,<span class="number">7698</span>,<span class="string">'1981-09-28'</span>,<span class="number">1250</span>,<span class="number">1400</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7698</span>,<span class="string">'BLAKE'</span>,<span class="string">'MANAGER'</span>,<span class="number">7839</span>,<span class="string">'1981-05-01'</span>,<span class="number">2850</span>,<span class="literal">NULL</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7782</span>,<span class="string">'CLARK'</span>,<span class="string">'MANAGER'</span>,<span class="number">7839</span>,<span class="string">'1981-06-09'</span>,<span class="number">2450</span>,<span class="literal">NULL</span>,<span class="number">10</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7788</span>,<span class="string">'SCOTT'</span>,<span class="string">'ANALYST'</span>,<span class="number">7566</span>,<span class="string">'1987-04-19'</span>,<span class="number">3000</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7839</span>,<span class="string">'KING'</span>,<span class="string">'PRESIDENT'</span>,<span class="literal">NULL</span>,<span class="string">'1981-11-17'</span>,<span class="number">5000</span>,<span class="literal">NULL</span>,<span class="number">10</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7844</span>,<span class="string">'TURNER'</span>,<span class="string">'SALESMAN'</span>,<span class="number">7698</span>,<span class="string">'1981-09-08'</span>,<span class="number">1500</span>,<span class="number">0</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7876</span>,<span class="string">'ADAMS'</span>,<span class="string">'CLERK'</span>,<span class="number">7788</span>,<span class="string">'1987-05-23'</span>,<span class="number">1100</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7900</span>,<span class="string">'JAMES'</span>,<span class="string">'CLERK'</span>,<span class="number">7698</span>,<span class="string">'1981-12-03'</span>,<span class="number">950</span>,<span class="literal">NULL</span>,<span class="number">30</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7902</span>,<span class="string">'FORD'</span>,<span class="string">'ANALYST'</span>,<span class="number">7566</span>,<span class="string">'1981-12-03'</span>,<span class="number">3000</span>,<span class="literal">NULL</span>,<span class="number">20</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7934</span>,<span class="string">'MILLER'</span>,<span class="string">'CLERK'</span>,<span class="number">7782</span>,<span class="string">'1982-01-23'</span>,<span class="number">1300</span>,<span class="literal">NULL</span>,<span class="number">10</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> emp <span class="keyword">VALUES</span>(<span class="number">7981</span>,<span class="string">'MILLER'</span>,<span class="string">'CLERK'</span>,<span class="number">7788</span>,<span class="string">'1992-01-23'</span>,<span class="number">2600</span>,<span class="number">500</span>,<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dept(</span><br><span class="line">	deptno		<span class="built_in">INT</span>,</span><br><span class="line">	dname		<span class="built_in">VARCHAR</span>(<span class="number">14</span>),</span><br><span class="line">	loc		<span class="built_in">VARCHAR</span>(<span class="number">13</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span>(<span class="number">10</span>, <span class="string">'ACCOUNTING'</span>, <span class="string">'NEW YORK'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span>(<span class="number">20</span>, <span class="string">'RESEARCH'</span>, <span class="string">'DALLAS'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span>(<span class="number">30</span>, <span class="string">'SALES'</span>, <span class="string">'CHICAGO'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span>(<span class="number">40</span>, <span class="string">'OPERATIONS'</span>, <span class="string">'BOSTON'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--最高工资</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">MAX</span>(sal) <span class="keyword">FROM</span> emp;</span><br><span class="line"><span class="comment">--最少工资</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">MIN</span>(sal) <span class="keyword">FROM</span> emp;</span><br><span class="line"><span class="comment">--最高工资的员工信息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal = (<span class="keyword">SELECT</span> <span class="keyword">MAX</span>(sal) <span class="keyword">FROM</span> emp);</span><br><span class="line"></span><br><span class="line"><span class="comment">--最低工资的员工信息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal = (<span class="keyword">SELECT</span> <span class="keyword">MIN</span>(sal) <span class="keyword">FROM</span> emp);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 单行子查询(&gt; &lt; &gt;= &lt;= = &lt;&gt;)</span></span><br><span class="line">	<span class="comment">-- 查询出高于10号部门的平均工资的员工信息</span></span><br><span class="line">   	1.10号部门的平均工资</span><br><span class="line">   	<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = <span class="number">10</span>;</span><br><span class="line">   	2. 高于上面结果员工信息 </span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal &gt; (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = <span class="number">10</span>);</span><br><span class="line">   	</span><br><span class="line">	</span><br><span class="line"><span class="comment">-- 多行子查询(in  not in any all)    &gt;any  &gt;all</span></span><br><span class="line">	<span class="comment">-- 查询出比10号部门任何员工薪资高的员工信息</span></span><br><span class="line">	1. 查询出10号部门最高工资</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">MAX</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = <span class="number">10</span>;</span><br><span class="line">	2. 得出结果</span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal &gt; (<span class="keyword">SELECT</span> <span class="keyword">MAX</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = <span class="number">10</span>);</span><br><span class="line">	<span class="comment">-- 查询出比10号部门任意一个员工薪资高的所有员工信息 : 只要比其中随便一个工资都可以</span></span><br><span class="line">	<span class="keyword">SELECT</span> sal <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = <span class="number">10</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal &gt;<span class="keyword">ANY</span>(<span class="keyword">SELECT</span> sal <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = <span class="number">10</span>) <span class="keyword">AND</span> deptno != <span class="number">10</span>;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="comment">-- 多列子查询(实际使用较少)   in</span></span><br><span class="line">	<span class="comment">-- 和10号部门同名同工作的员工信息</span></span><br><span class="line">	1. 查询出10号部门所有人 名字和工作</span><br><span class="line">	<span class="keyword">SELECT</span> ename,job <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">10</span>;</span><br><span class="line">	2. 得出结果</span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> (ename,job) <span class="keyword">IN</span> (<span class="keyword">SELECT</span> ename,job <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">10</span>) <span class="keyword">AND</span> deptno !=<span class="number">10</span>;</span><br><span class="line"><span class="comment">-- Select后面接子查询</span></span><br><span class="line">	<span class="comment">-- 获取员工的名字和部门的名字</span></span><br><span class="line">	<span class="keyword">SELECT</span> ename,deptno <span class="keyword">FROM</span> emp ;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">SELECT</span> ename,(<span class="keyword">SELECT</span> dname <span class="keyword">FROM</span> dept d <span class="keyword">WHERE</span> d.deptno = e.deptno ) 部门名称 <span class="keyword">FROM</span> emp e ;</span><br><span class="line"><span class="comment">-- from后面接子查询</span></span><br><span class="line">	<span class="comment">-- 查询emp表中所有管理层的信息</span></span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> mgr <span class="keyword">FROM</span> emp;</span><br><span class="line">	</span><br><span class="line">	- 得出结果</span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp e,(<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> mgr <span class="keyword">FROM</span> emp) mgrtable <span class="keyword">WHERE</span> e.empno = mgrtable.mgr;</span><br><span class="line">			</span><br><span class="line">	</span><br><span class="line"><span class="comment">-- where 接子查询</span></span><br><span class="line">	<span class="comment">-- 薪资高于10号部门平均工资的所有员工信息</span></span><br><span class="line">	1. 10号部门平均工资</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">10</span>;</span><br><span class="line">	2. 得出结果</span><br><span class="line">	<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal &gt; (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">10</span>);</span><br><span class="line">      			</span><br><span class="line">	</span><br><span class="line"><span class="comment">-- having后面接子查询</span></span><br><span class="line">	<span class="comment">-- 有哪些部门的平均工资高于30号部门的平均工资</span></span><br><span class="line">	1. 统计所有的部门的平均工资</span><br><span class="line">	<span class="keyword">SELECT</span> deptno, <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">GROUP</span> <span class="keyword">BY</span> deptno;</span><br><span class="line">	2. 30号部门的平均工资</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">30</span>;</span><br><span class="line">	3.得出结果:</span><br><span class="line">	<span class="keyword">SELECT</span> deptno, <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">GROUP</span> <span class="keyword">BY</span> deptno <span class="keyword">HAVING</span> <span class="keyword">AVG</span>(sal) &gt; (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno=<span class="number">30</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 列出达拉斯加工作的人中,比纽约平均工资高的人</span></span><br><span class="line">   1. 查处达拉斯加工作的人</span><br><span class="line">      1. 查询出达拉斯的部门编号</span><br><span class="line">      <span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> loc =<span class="string">'DALLAS'</span>;</span><br><span class="line">      2. <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = ( <span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> loc =<span class="string">'DALLAS'</span>);</span><br><span class="line">   </span><br><span class="line">   2. 查出纽约工作的人的平均工资</span><br><span class="line">      1. 查处纽约的部门编号</span><br><span class="line">       <span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> loc =<span class="string">'NEW YORK'</span>;</span><br><span class="line">      2. <span class="keyword">SELECT</span> <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = (<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> loc =<span class="string">'NEW YORK'</span>);</span><br><span class="line">      </span><br><span class="line">   3. 得出最终结果:</span><br><span class="line">     <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = ( <span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> loc =<span class="string">'DALLAS'</span>)</span><br><span class="line">      <span class="keyword">AND</span> </span><br><span class="line">      sal &gt; (<span class="keyword">SELECT</span> <span class="keyword">AVG</span>(sal) <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> deptno = (<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> dept <span class="keyword">WHERE</span> loc =<span class="string">'NEW YORK'</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="条件表达式-case…when-MySql和Oracle-通用"><a href="#条件表达式-case…when-MySql和Oracle-通用" class="headerlink" title="条件表达式: case…when    (MySql和Oracle 通用)"></a>条件表达式: case…when    (MySql和Oracle 通用)</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="keyword">case</span> ename</span><br><span class="line">	<span class="keyword">when</span> <span class="string">'KING'</span> <span class="keyword">then</span> <span class="string">'彤彤'</span></span><br><span class="line">    <span class="keyword">when</span> <span class="string">'ALLEN'</span> <span class="keyword">then</span> <span class="string">'老子'</span></span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">    	<span class="string">'其他'</span></span><br><span class="line">    <span class="keyword">end</span> <span class="string">"中文名"</span>	</span><br><span class="line"><span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2018/11/02/MySql复习/">MySql复习</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Arnold 的个人博客">Arnold</a></p>
+        <p><span>发布时间:</span>2018年11月02日 - 22时35分</p>
+        <p><span>最后更新:</span>2018年11月20日 - 08时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/11/02/MySql复习/" title="MySql复习">https://github.com/SDIJJ/sdijj.github.io/2018/11/02/MySql复习/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://github.com/SDIJJ/sdijj.github.io/2018/11/02/MySql复习/　　作者: Arnold" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2018/11/11/Oracle学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Oracle学习
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2018/10/25/IEDA高效使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java  基础大复习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySql-复习"><span class="toc-number">1.</span> <span class="toc-text">MySql 复习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#完成对MYSQL数据库的多表查询及建表的操作"><span class="toc-number">1.1.</span> <span class="toc-text">完成对MYSQL数据库的多表查询及建表的操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#掌握MYSQL中多表的创建及多表的查询"><span class="toc-number">1.2.</span> <span class="toc-text">掌握MYSQL中多表的创建及多表的查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#掌握MYSQL中的表关系分析并能正确建表"><span class="toc-number">1.3.</span> <span class="toc-text">掌握MYSQL中的表关系分析并能正确建表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#需求"><span class="toc-number">1.4.</span> <span class="toc-text">需求:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#技术分析"><span class="toc-number">1.5.</span> <span class="toc-text">技术分析:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用商城表完成对商品信息的多表查询"><span class="toc-number">2.</span> <span class="toc-text">使用商城表完成对商品信息的多表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#需求分析"><span class="toc-number">2.1.</span> <span class="toc-text">需求分析:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#技术分析-1"><span class="toc-number">2.2.</span> <span class="toc-text">技术分析:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多表查询"><span class="toc-number">2.3.</span> <span class="toc-text">多表查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分页查询"><span class="toc-number">2.4.</span> <span class="toc-text">分页查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子查询-了解的内容-非常重要"><span class="toc-number">2.5.</span> <span class="toc-text">子查询(了解的内容,非常重要)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习题"><span class="toc-number">2.6.</span> <span class="toc-text">练习题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多表查询练习数据"><span class="toc-number">2.7.</span> <span class="toc-text">多表查询练习数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#面试题"><span class="toc-number">2.8.</span> <span class="toc-text">面试题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件表达式-case…when-MySql和Oracle-通用"><span class="toc-number">2.9.</span> <span class="toc-text">条件表达式: case…when    (MySql和Oracle 通用)</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/baidu.js?v=89860593.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+
+
+
+    
+        <section id="comments">
+<link rel="stylesheet" href="/css/gitment.min.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'MySql复习', // 可选。默认为 location.href
+  owner: 'sdijj',
+  repo: 'sdijj.github.io',
+  oauth: {
+    client_id: '3c216a509081d325436b',
+    client_secret: 'b3c4b8329f0990d08c803ba5b8af0eb3d5a240c2',
+  },
+})
+gitment.render('comments')
+</script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2018/11/11/Oracle学习/" title="上一篇: Oracle学习">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2018/10/25/IEDA高效使用/" title="下一篇: Java  基础大复习">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/11/Oracle学习/">Oracle学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/02/MySql复习/">MySql复习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/25/IEDA高效使用/">Java  基础大复习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/24/Java基础大复习/">Java  基础大复习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/并查集(Union Find)/">并查集(Union Find)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/用第三方sdk解决微信授权/">用第三方sdk解决微信授权</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/SpringMvc的一些方法/">SpringMvc的一些方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/二分搜索树(Binary Seacher  Tree)/">二分搜索树(Binary Seacher  Tree)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/堆排序(heapSort)/">堆排序(heapSort)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/堆的学习(Heap)/">堆(Heap)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/11/高级排序算法/">高级排序算法(n*logN)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/10/基础的排序算法/">基础排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/SpringCloud微服务学习总结/">SpringCloud微服务学习总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/自定义注解+反射实现orm框架的映射与查询功能/">自定义注解+反射实现orm框架的映射与查询功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/初识Docker/">初识Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/test2/">突破算法第11天-红黑树</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Arnold
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
